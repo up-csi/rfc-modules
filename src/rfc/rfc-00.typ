@@ -5,4 +5,20 @@
     authors: ("Victor Edwin Reyes",),
 )
 
-= The Request for Comments
+= Request for Comments
+
+== The IETF RFC
+
+== The Engineering Committee RFC
+
+=== The Purpose of the RFC
+
+= Roles and Responsibilities
+
+== The Director for Engineering
+
+== The Engineering Committee Member
+
+= RFC Standards
+
+= Style Guide
