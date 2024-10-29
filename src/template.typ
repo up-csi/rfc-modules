@@ -2,7 +2,13 @@
 #import "@preview/codelst:2.0.0": code-frame
 #import "@preview/showybox:2.0.1": showybox
 
-#let project(title, authors: (), body) = style(styles => {
+#let project(
+    title, 
+    authors: (), 
+    status: "The status of the RFC, whether it has been adopted as a standard by the Director or if it is still a draft", 
+    abstract: "A summary of the RFC, especially its most important provisions", 
+    body
+) = style(styles => {
     // Font Settings
     set text(font: "Fira Sans", size: 11pt, lang: "en")
     show raw: set text(font: "JetBrains Mono", size: 9pt, lang: "en")
@@ -68,10 +74,6 @@
         underline(link)
     }
 
-    // Heading Styles
-    set heading(numbering: "1.1 ")
-    show heading: set block(below: 1em)
-
     // Grid and Table Settings
     set grid(gutter: 4%)
     set table(inset: 1em)
@@ -80,6 +82,31 @@
     align(center, text(1.75em, strong(title)))
     stack(dir: ttb, spacing: 0.75em, ..authors.map(a => align(center)[#a]))
 
+    // Status and Abstract block (called the start block)
+    let start_block = block(
+        width: 85%,
+        inset: 10pt,
+        stroke: 1pt,
+    )[
+        #align(left)[
+            // Status
+            = Status of this Document
+            #status
+
+            // Abstract
+            = Abstract
+            #abstract
+        ]
+    ]
+
+    // Center and Display start block
+    align(center, start_block)
+    pagebreak()
+
+    // Heading Styles - go after status and abstract to ensure they are not numbered
+    set heading(numbering: "1.1 ")
+    show heading: set block(below: 1em)
+    
     // Table of Contents
     outline()
     pagebreak()
