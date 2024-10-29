@@ -88,6 +88,7 @@
         inset: 10pt,
         stroke: 1pt,
     )[
+        #set heading(outlined: false)
         #align(left)[
             // Status
             = Status of this Document
