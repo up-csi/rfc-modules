@@ -19,6 +19,6 @@
 
 == The Engineering Committee Member
 
-= RFC Standards
-
 = Style Guide
+
+== Parts of an RFC
