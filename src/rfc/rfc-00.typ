@@ -19,6 +19,20 @@ For example, anyone can build an Internet Relay Chat (IRC) system simply by comp
 
 == The Engineering Committee RFC
 
+In accordance with the UP CSI Constitution of 2024, Article V, Section 3, the Engineering Committee is responsible for serving as technical consultants and quality assurers for the organization's projects.
+
+As of the 2425A semester, this responsibility has extended to handling the technical education and training of the organization's developers.
+
+Previous terms have resulted in the adoption of new technologies and standards such as SvelteKit and Git commit conventions. These have been included, and to some extent _codified_, in the committee's trademark Developer Training Program (DTP) and DevCamp (DC). 
+
+However, educational materials are not made for the purpose of rigorously codifying and justifying standards. DTP and DC materials are not strictly reference materials, and would be difficult to specifically reference or use as a foundation for arguments. 
+
+Similarly, codifying the Committee's smaller design or technical decisions becomes more difficult in the format of the training modules.
+
+A format is needed that is not educational - that does not need to teach, but to assert. 
+
+Thus, in order to define, preserve, and defend the _technical decisions, standards, and policies_ of the Engineering Committee, the *Engineering Committee Request for Comments* is defined herein.
+
 === The Purpose of the RFC
 
 = Roles and Responsibilities
