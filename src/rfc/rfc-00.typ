@@ -25,15 +25,28 @@ As of the 2425A semester, this responsibility has extended to handling the techn
 
 Previous terms have resulted in the adoption of new technologies and standards such as SvelteKit and Git commit conventions. These have been included, and to some extent _codified_, in the committee's trademark Developer Training Program (DTP) and DevCamp (DC). 
 
-However, educational materials are not made for the purpose of rigorously codifying and justifying standards. DTP and DC materials are not strictly reference materials, and would be difficult to specifically reference or use as a foundation for arguments. 
+However, educational materials are not made for the purpose of rigorously codifying and justifying standards. DTP and DC materials are not strictly reference materials, and would be difficult to specifically reference or use as a foundation for arguments. Not to mention, educational materials are not strictly made to be questioned.
 
 Similarly, codifying the Committee's smaller design or technical decisions becomes more difficult in the format of the training modules.
 
-A format is needed that is not educational - that does not need to teach, but to assert. 
+A format is needed that is not educational - that does not need to teach, but to assert and to be freely challenged. 
 
 Thus, in order to define, preserve, and defend the _technical decisions, standards, and policies_ of the Engineering Committee, the *Engineering Committee Request for Comments* is defined herein.
 
 === The Purpose of the RFC
+
+The *Request for Comments* is made with three purposes:
+- To *record* the decisions of the Engineering Committee
+
+    The RFC must be able to serve as the Committee's memory and as its voice. Any RFC adopted as a standard carries the opinion of the Committee to its readers inside and outside the organization and forward into the future.
+
+- To *define*, rigorously, the technical points and implications of these decisions
+
+    The RFC must be able to serve as a manual for anyone who wants to adopt these same standards. The same way an _IETF RFC_ defines a protocol that can be adopted to interface with other adopters, so must implementations of an _Engineering RFC_ be intercompatible.
+
+- To *justify* these decisions and their implications, with the intent of soliciting _comments_
+
+    The RFC is a standard and a record, but not a lone source of truth. It must be able to challenge its readers to take on the standard for justifiable reasons. Similarly; however, it can be challenged. _It must be challenged_.
 
 = Roles and Responsibilities
 
