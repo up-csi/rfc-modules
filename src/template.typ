@@ -2,10 +2,29 @@
 #import "@preview/codelst:2.0.0": code-frame
 #import "@preview/showybox:2.0.1": showybox
 
+// Define RFC statuses
+#let draft-status = text(
+    font: "Fira Mono",
+    weight: "bold",
+    fill: luma(100)
+)[DRAFT STANDARD]
+
+#let proposed-status = text(
+    font: "Fira Mono",
+    weight: "bold",
+    fill: yellow
+)[PROPOSED STANDARD]
+
+#let adopted-status = text(
+    font: "Fira Mono",
+    weight: "bold",
+    fill: green
+)[ADOPTED STANDARD]
+
 #let project(
     title, 
     authors: (), 
-    status: "The status of the RFC, whether it has been adopted as a standard by the Director or if it is still a draft", 
+    status: "The status of the RFC, whether it has been adopted as a standard by the Director or if it is still a draft (use variables " + `draft-status, proposed-status` + " or " + `approved-status` + ")", 
     abstract: "A summary of the RFC, especially its most important provisions", 
     body
 ) = style(styles => {
