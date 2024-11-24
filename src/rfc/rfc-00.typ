@@ -68,6 +68,18 @@ With this, the Director is expected to hold the following responsibilities with 
 
 == The Engineering Committee Member
 
+Members of the Engineering Committee reserve the right to the following:
++ To propose RFCs with status #draft-status, indicating that they are standards in the process of being written
++ To propose RFCs with status #proposed-status, indicating that they are standards that have been raised for the Director's approval
++ To endorse RFCs of either status written by non-members and receive recognition as co-authors, provided that due credit is given to the original authors
++ To comment on proposed RFCs
+
+With this, members are expected to hold the following responsibilities with regard to RFCs:
++ To be aware of and advise others on the provisions contained within the RFCs
++ To abide by and make use of the provisions of adopted RFCs
++ To ensure that all standards, proposed and adopted, are technically sound
++ To question and critique all standards on grounds of technical soundness, alignment with our values, and relevance
+
 = Style Guide
 
 == Parts of an RFC
