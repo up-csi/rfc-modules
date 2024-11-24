@@ -56,6 +56,11 @@ This section defines the roles that stakeholders within the Engineering Committe
 
 == The Director for Engineering
 
+The Director for Engineering, as head of the committee, reserves the right to the following:
++ To modify the format of RFCs or to otherwise modify this standard
++ To designate *RFC numbers*
++ To accept or reject RFC drafts, elevating them to the status of #adopted-status
+
 == The Engineering Committee Member
 
 = Style Guide
