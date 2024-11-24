@@ -52,6 +52,8 @@ The *Request for Comments* is made with three purposes:
 
 = Roles and Responsibilities
 
+This section defines the roles that stakeholders within the Engineering Committee are supposed to play within the process of drafting, publishing, and approving RFCs.
+
 == The Director for Engineering
 
 == The Engineering Committee Member
