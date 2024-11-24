@@ -61,6 +61,11 @@ The Director for Engineering, as head of the committee, reserves the right to th
 + To designate *RFC numbers*
 + To accept or reject RFC drafts, elevating them to the status of #adopted-status
 
+With this, the Director is expected to hold the following responsibilities with regard to RFCs:
++ To ensure that members of the committee are aware of and adhere to the provisions of each adopted RFC
++ To ensure that RFCs continue to be written and published by the committee for the benefit of its members and its readers
++ To ensure that all RFCs adhere to the writing standards outlined within this document
+
 == The Engineering Committee Member
 
 = Style Guide
