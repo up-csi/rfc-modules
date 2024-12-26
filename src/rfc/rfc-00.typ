@@ -96,6 +96,8 @@ Obsolete RFCs are to be replaced with a new RFC and indicated by the status #obs
 
 === File Format
 
+RFCs must be written in the Typst markdown language using the prescribed template.
+
 === Punctuation
 
 === Capitalization
