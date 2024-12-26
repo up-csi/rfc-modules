@@ -100,7 +100,11 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 
 === Punctuation
 
+- No overstriking or underlining is allowed
 
+- A comma is used before the last item of a series
+
+- When quoting literal text, punctuation marks belong outside of the quotation marks unless they are part of the original quote
 
 === Capitalization
 
