@@ -90,6 +90,10 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 
 RFCs will be identified by at least two digits ("RFC-XX") and shall be assigned consecutively. 
 
+Individual RFCs, once published as an #adopted-status, are not to be amended except for typographical, grammatical, or stylistic changes. 
+
+Obsolete RFCs are to be replaced with a new RFC and indicated by the status #obsoleted-status("[new rfc]").
+
 === File Format
 
 === Punctuation
