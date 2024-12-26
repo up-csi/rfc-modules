@@ -92,11 +92,13 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 
 - Individual RFCs, once published as an #adopted-status, are not to be amended except for typographical, grammatical, or stylistic changes. 
 
-- Obsolete RFCs are to be replaced with a new RFC and indicated by the status #obsoleted-status("[new rfc]").
+- Obsolete RFCs are to be replaced with a new RFC and indicated by the status #obsoleted-status("RFC-XX").
 
 === File Format
 
 - RFCs must be written in the Typst markdown language using the prescribed template.
+
+- The source files for RFCs must be stored in the RFC repository under the `src/rfc` directory as files named `rfc-xx.typ`
 
 === Punctuation
 
@@ -114,6 +116,8 @@ All RFCs will abide by the following points of style, guided in part by the IETF
     - RFC headers and titles in sentence-form may deviate from this specification
 
 === Citation
+
+- The bibliography file for an RFC will be stored
 
 == Structure
 
