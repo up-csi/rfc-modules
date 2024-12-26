@@ -117,7 +117,9 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 
 === Citation
 
-- The bibliography file for an RFC will be stored
+- The bibliography file for an RFC will be stored in the same folder as the RFC source code in the `.bib` format as `rfc-xx.bib`.
+
+- RFCs shall use the IEEE format.
 
 == Structure
 
