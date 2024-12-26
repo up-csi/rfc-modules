@@ -21,6 +21,12 @@
     fill: green
 )[ADOPTED STANDARD]
 
+#let obsoleted-status(new_rfc) = text(
+    font: "Fira Mono",
+    weight: "bold",
+    fill: luma(80)
+)[OBSOLETED BY #new_rfc]
+
 #let project(
     title, 
     authors: (), 
