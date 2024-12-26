@@ -82,4 +82,24 @@ With this, members are expected to hold the following responsibilities with rega
 
 = Style Guide
 
-== Parts of an RFC
+== Style conventions
+
+=== RFC Numbering
+
+=== File Format
+
+=== Punctuation
+
+=== Capitalization
+
+=== Citation
+
+== Structure
+
+=== Preamble
+
+==== Author
+
+==== Status
+
+==== Abstract
