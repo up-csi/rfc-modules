@@ -108,6 +108,11 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 
 === Capitalization
 
+- Capitalization must be consistent within the document, and ideally with related RFCs
+
+- The major words in RFC headers and titles should be capitalized (similar to "title case")
+    - RFC headers and titles in sentence-form may deviate from this specification
+
 === Citation
 
 == Structure
