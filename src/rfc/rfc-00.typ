@@ -151,6 +151,12 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 
 ==== Author
 
+- An RFC's authors shall include all persons who directly contributed to _both_ its writing and formulation, including non-Engineering Committee members
+
+- The main author of an RFC (that is, the author identified as having provided the most material contributions to the document) shall be placed at the top of the authors' list. All others thereafter shall be included alphabetically.
+
+- The authors of obsoleted RFCs need not be included in succeeding RFCs, unless they have directly contributed to the new document.
+
 ==== Status
 
 ==== Abstract
