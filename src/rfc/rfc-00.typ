@@ -50,7 +50,7 @@ The *Request for Comments* is made with three purposes:
 
     The RFC is a standard and a record, but not a lone source of truth. It must be able to challenge its readers to take on the standard for justifiable reasons. Similarly; however, it can be challenged. _It must be challenged_.
 
-= Roles and Responsibilities
+= Roles and Responsibilities <roles-and-resp>
 
 This section defines the roles that stakeholders within the Engineering Committee are supposed to play within the process of drafting, publishing, and approving RFCs.
 
