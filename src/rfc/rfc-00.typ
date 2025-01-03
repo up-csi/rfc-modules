@@ -121,7 +121,19 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 
 - RFCs shall use the IEEE format.
 
+=== Writing Style
+
+- RFCs shall encode the following information:
+    - *Imperative directives* outlining Engineering Committee policies and best practices, and
+    - *Narratives or information* briefly discussing the reasoning for the best practices
+
+- RFCs must exhibit a clear delineation between both
+
+- RFCs must make it especially easy to locate and identify _directives_ for rapid referencing
+
 == Structure
+
+- An RFC must contain the sections enumerated herein. Unless otherwise prohibited by this standard; however, the addition of new sections is allowed.
 
 === Preamble
 
