@@ -32,6 +32,7 @@
     authors: (), 
     status: "The status of the RFC, whether it has been adopted as a standard by the Director or if it is still a draft (use variables " + `draft-status, proposed-status` + " or " + `approved-status` + ")", 
     abstract: "A summary of the RFC, especially its most important provisions", 
+    bibfile: "",
     body
 ) = style(styles => {
     // Font Settings
@@ -140,6 +141,10 @@
     // Main Content
     set par(justify: true)
     body
+
+    if bibfile != "" {
+        bibliography(bibfile)
+    }
 })
 
 // Utilities
