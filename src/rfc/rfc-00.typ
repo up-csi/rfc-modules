@@ -174,3 +174,7 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 - An abstract shall not exceed 150 words in length.
 
 - The abstract shall ideally begin with the words "This document..." or "This standard..."
+
+=== Bibliography
+
+#bibliography("rfc-00.bib")
