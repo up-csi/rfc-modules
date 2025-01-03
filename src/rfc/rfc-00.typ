@@ -82,7 +82,7 @@ With this, members are expected to hold the following responsibilities with rega
 
 = Style Guide
 
-All RFCs will abide by the following points of style, guided in part by the IETF RFC 7322.
+All RFCs will abide by the following points of style, guided in part by the #link("https://www.rfc-editor.org/rfc/rfc7322")[IETF RFC 7322].
 
 == Style conventions
 
