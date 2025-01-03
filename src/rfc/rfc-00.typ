@@ -141,7 +141,7 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 
 - The preamble shall comprise the first page of an RFC
 
-- The preamble shall be made up of the following elements:
+- The preamble shall be made up of the following elements, in order:
 
 ==== Title
 
@@ -168,3 +168,9 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 - The usage of these statuses shall abide by the provisions in #ref(<roles-and-resp>)
 
 ==== Abstract
+
+- An RFC shall have an abstract to provide a concise and comprehensive overview of its contents.
+
+- An abstract shall not exceed 150 words in length.
+
+- The abstract shall ideally begin with the words "This document..." or "This standard..."
