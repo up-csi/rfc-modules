@@ -137,6 +137,14 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 
 === Preamble
 
+- The preamble of an RFC shall serve as an informative introduction to the contents of an RFC
+
+- The preamble shall comprise the first page of an RFC
+
+- The preamble shall be made up of the following elements:
+
+==== Title
+
 ==== Author
 
 ==== Status
