@@ -143,6 +143,8 @@ All RFCs will abide by the following points of style, guided in part by the #lin
 
 - RFCs must make it especially easy to locate and identify _directives_ for rapid referencing
 
+- In the event of a dispute regarding writing style or tone, the *Director for Engineering* shall be the final arbiter.
+
 == Structure
 
 - An RFC must contain the sections enumerated herein. Unless otherwise prohibited by this standard; however, the addition of new sections is allowed.
