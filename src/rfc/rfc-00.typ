@@ -123,6 +123,18 @@ All RFCs will abide by the following points of style, guided in part by the #lin
 
 === Writing Style
 
+- Leeway is given to authors as to the style and tone of an RFC, but for the sake of consistency, a uniform style must be enforced.
+
+- An RFC must be professional, from tone to grammar and word choice.
+
+- An RFC must be informational in tone and assumes that the reader intends to or must follow the directives stated.
+    - Additional information, such as the context behind or consequences of certain decisions is encouraged, but is not the main point of an RFC
+
+- An RFC must be written in the third person. 
+
+- The grammar of an RFC does not need to strictly adhere to any variant of English, so long as it is universally understandable.
+    - If a reference variant must be specified, preference should be given to American English.
+
 - RFCs shall encode the following information:
     - *Imperative directives* outlining Engineering Committee policies and best practices, and
     - *Narratives or information* briefly discussing the reasoning for the best practices
