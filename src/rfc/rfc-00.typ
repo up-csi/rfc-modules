@@ -145,6 +145,10 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 
 ==== Title
 
+- An RFC shall be titled according to the format: "RFC-XX: [SUBTITLE]"
+
+- The subtitle of an RFC must be related to the topic and discusses and refer specifically to the item(s) it lays down standards for (e.g. "Git Standards" instead of "On Git Standards" or "On the usage of Git")
+
 ==== Author
 
 ==== Status
