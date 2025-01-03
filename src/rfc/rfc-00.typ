@@ -13,7 +13,7 @@
 
 #link("https://www.ietf.org/process/rfcs/")[Requests for Comments] are documents published by the Internet Engineering Task Force as their technical documentation. They serve as technical specifications for foundational concepts, systems, and protocols that underpin the internet. 
 
-Such systems include the Hypertext Transfer Protocol (HTTP; #link("https://datatracker.ietf.org/doc/html/rfc7230")[RFC 7230] to #link("https://datatracker.ietf.org/doc/html/rfc7235")[RFC 7235]), WebSockets (#link("https://datatracker.ietf.org/doc/html/rfc6455")[RFC 6455]), Secure Shell (SSH; #link("https://datatracker.ietf.org/doc/html/rfc4251")[RFC 4251]), Secure Hash Algorithms (SHA; #link("https://www.rfc-editor.org/rfc/rfc4634")[RFC 4634]), and many, many others.
+Such systems include the Hypertext Transfer Protocol (HTTP; #link("https://datatracker.ietf.org/doc/html/rfc7230")[RFC 7230] #cite(<RFC7230>) to #link("https://datatracker.ietf.org/doc/html/rfc7235")[RFC 7235]) #cite(<RFC7235>), WebSockets (#link("https://datatracker.ietf.org/doc/html/rfc6455")[RFC 6455]) #cite(<RFC6455>), Secure Shell (SSH; #link("https://datatracker.ietf.org/doc/html/rfc4251")[RFC 4251]) #cite(<RFC4251>), Secure Hash Algorithms (SHA; #link("https://www.rfc-editor.org/rfc/rfc4634")[RFC 4634]) #cite(<RFC4634>), and many, many others.
 
 Each of the above listed technologies has an associated RFC which describes their specifications. Looking from the outside in, they effectively define interfaces that can be used to communicate with any systems that comply with their specifications. 
 
@@ -82,7 +82,7 @@ With this, members are expected to hold the following responsibilities with rega
 
 = Style Guide
 
-All RFCs will abide by the following points of style, guided in part by the #link("https://www.rfc-editor.org/rfc/rfc7322")[IETF RFC 7322].
+All RFCs will abide by the following points of style, guided in part by the #link("https://www.rfc-editor.org/rfc/rfc7322")[IETF RFC 7322] #cite(<RFC7322>).
 
 == Style conventions
 
