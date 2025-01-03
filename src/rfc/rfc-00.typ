@@ -159,4 +159,12 @@ All RFCs will abide by the following points of style, guided in part by the IETF
 
 ==== Status
 
+- An RFC may have one of four statuses:
+    - #draft-status (encoded as `#draft-status` in Typst)
+    - #proposed-status (encoded as `#proposed-status` in Typst)
+    - #adopted-status (encoded as `#adopted-status` in Typst)
+    - #obsoleted-status("RFC-XX") (encoded as `#obsoleted-status("RFC-XX")` in Typst)
+
+- The usage of these statuses shall abide by the provisions in #ref(<roles-and-resp>)
+
 ==== Abstract
