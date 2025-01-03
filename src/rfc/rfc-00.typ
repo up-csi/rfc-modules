@@ -115,7 +115,7 @@ All RFCs will abide by the following points of style, guided in part by the #lin
 - The major words in RFC headers and titles should be capitalized (similar to "title case")
     - RFC headers and titles in sentence-form may deviate from this specification
 
-=== Citation
+=== Citation <citation>
 
 - The bibliography file for an RFC will be stored in the same folder as the RFC source code in the `.bib` format as `rfc-xx.bib`.
 
@@ -176,5 +176,7 @@ All RFCs will abide by the following points of style, guided in part by the #lin
 - The abstract shall ideally begin with the words "This document..." or "This standard..."
 
 === Bibliography
+
+- A bibliography shall be included at the end of the document, titled "Bibliography" and shall be in the style specified in #ref(<citation>)
 
 #bibliography("rfc-00.bib")
