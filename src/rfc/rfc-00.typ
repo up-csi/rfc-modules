@@ -96,7 +96,7 @@ All RFCs will abide by the following points of style, guided in part by the #lin
 
 === File Format
 
-- RFCs must be written in the Typst markdown language using the prescribed template.
+- RFCs must be written in the Typst language using the prescribed template.
 
 - The source files for RFCs must be stored in the RFC repository under the `src/rfc` directory as files named `rfc-xx.typ`
 
