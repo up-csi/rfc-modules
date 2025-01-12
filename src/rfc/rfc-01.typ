@@ -32,6 +32,32 @@ The standards outlined in this document are to be adopted for use by the Enginee
 
 = Git Configuration
 
+For the purposes of ensuring consistent operation and procedures in version control, the following configuration settings shall be set as standard:
+
+== Authentication
+
+== #link("https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#:~:text=long%20they%20are.-,user.signingkey,-If%20you%E2%80%99re%20making")[`user.signingkey`]
+
+== #link("https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#:~:text=documentation%20mentioned%20above.-,core.editor,-By%20default%2C%20Git")[`core.editor`]
+
+The default text editor that Git uses might vary across different operating systems and users. Ubuntu users, for example, use `nano` by default and Windows users have the option to use even Notepad as a text editor. To standardize this, the following directive is enforced:
+
+- Git SHOULD be configured to use `vim` by default.
+
+```sh
+git config --global core.editor vim
+```
+
+== #link("https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#:~:text=with%20these%20issues.-,core.autocrlf,-If%20you%E2%80%99re%20programming")[`core.autocrlf`]
+
+Developers on the committee use different operating systems, with different end-of-line behavior which Git tries to adjust for. Unfortunately, the end-of-line behavior enforced by Git has #link("https://github.com/up-csi/up-csi.github.io/pull/84#issuecomment-2388406206")[caused issues on previous projects]. To remedy this, the following directive is enforced:
+
+- Git MUST be configured to ignore line endings and leave them as is.
+
+```sh
+git config --global core.autocrlf false
+```
+
 = Git Usage Standards
 
 == Conventional Commits
