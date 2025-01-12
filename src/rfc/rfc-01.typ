@@ -15,6 +15,13 @@ The standards outlined in this document are to be adopted for use by the Enginee
 
 = Git
 
+- *Git* MUST be the version control system of choice for the Engineering Committee and be readily available on all development platforms to be used by its members.
+
+- *Git Bash* SHOULD be installed with Git for Windows on Windows platforms.
+
+- The latest version of Git upon writing this document is *2.48.0*, the Engineering Committee MUST NOT use any version older than this.
+    - The Engineering Committee SHOULD NOT use any major version newer than *2*
+
 = GitHub
 
 = Git Configuration
