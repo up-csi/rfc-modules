@@ -15,7 +15,7 @@ The standards outlined in this document are to be adopted for use by the Enginee
 
 = Git
 
-- *Git* MUST be the version control system of choice for the Engineering Committee and be readily available on all development platforms to be used by its members.
+- *Git* MUST be the version control system of choice for the Engineering Committee and MUST be readily available on all development platforms to be used by its members.
 
 - *Git Bash* SHOULD be installed with Git for Windows on Windows platforms.
 
@@ -23,6 +23,12 @@ The standards outlined in this document are to be adopted for use by the Enginee
     - The Engineering Committee SHOULD NOT use any major version newer than *2*
 
 = GitHub
+
+- *GitHub* MUST be the distributed version control provider of choice for the Engineering Committee, except in circumstances such as projects or scenarios where GitHub cannot be used.
+
+- *UP CSI* MUST have a GitHub organization for use as a version control provider and project management platform for the organization
+    - The current *Director for Engineering* MUST have administrator privilieges on the UP CSI GitHub organization
+    - *UP CSI* SHOULD have a GitHub organization for storing training materials such as assignment templates and individual assignments, to which the Director for Engineering SHOULD have administrator priviliges
 
 = Git Configuration
 
