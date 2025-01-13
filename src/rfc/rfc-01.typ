@@ -36,7 +36,14 @@ For the purposes of ensuring consistent operation and procedures in version cont
 
 == Authentication
 
+- *SSH* MUST be the authentication method used for interfacing with GitHub. Committee members SHOULD follow #link("https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=windows")[this guide] for doing so.
+    - Generated SSH keys SHOULD use the *ED25519* encryption algorithm.
+
 == #link("https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#:~:text=long%20they%20are.-,user.signingkey,-If%20you%E2%80%99re%20making")[`user.signingkey`]
+
+- *All commits* MUST be cryptographically signed. Since SSH is already required as an authentication method, commits SHOULD be signed with the same SSH key used to verify with GitHub. Committee members should follow #link("https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=windows")[this guide] for doing so.
+
+- *Vigilant mode* MUST be enabled on GitHub for all Committee members to mark unsigned commits as unverified. Committee members should follow #link("https://github.blog/changelog/2021-04-28-flag-unsigned-commits-with-vigilant-mode/")[this guide] for doing so.
 
 == #link("https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#:~:text=documentation%20mentioned%20above.-,core.editor,-By%20default%2C%20Git")[`core.editor`]
 
