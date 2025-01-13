@@ -70,3 +70,7 @@ git config --global core.autocrlf false
 == Conventional Commits
 
 - *All commit messages* MUST abide by the #link("https://github.blog/changelog/2021-04-28-flag-unsigned-commits-with-vigilant-mode/")[Conventional Commit specification].
+
+- *Pull request titles* MUST be treated as Conventional Commit messages, consisting of a prefix, optional scope and breaking-marker, and description. 
+    - It MAY also contain a reference to the relevant issue number it resolves.
+    - To ensure merge commits arising from pull requests are properly titled, all repositories MUST set the merge commit message for pull requests to *"Pull request title and description"* as described #link("https://github.blog/changelog/2022-08-23-new-options-for-controlling-the-default-commit-message-when-merging-a-pull-request/")[here].
