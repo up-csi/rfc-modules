@@ -1,6 +1,6 @@
-# UP CSI Dev Modules
+# UP CSI RFC Modules
 
-The document template for UP CSI Dev Training Program and DevCamp modules.
+The document template and repository for the UP CSI Engineering Committee Requests for Comments.
 
 # Getting Started
 
@@ -25,12 +25,18 @@ The document template for UP CSI Dev Training Program and DevCamp modules.
 // Note that all arguments are required!
 #show: project.with(
     // The main content of the title section.
-    title: "Module Title",
-    // List of authors who contributed to this module.
+    title: "RFC-XX: Title",
+    // List of authors who contributed to this RFC.
     authors: ("UP CSI",),
+    // The status of the RFC
+    status: #draft-status
+    // A short summary of the RFC
+    abstract: "This document standardizes ..."
 )
 
 // TODO: Your Content
+
+#bibliography("rfc-xx.bib")
 ```
 
 ## Compilation
