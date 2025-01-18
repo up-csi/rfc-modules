@@ -3,7 +3,7 @@
 #show: project.with(
     "RFC-00: Requests for Comments",
     authors: ("Victor Edwin Reyes",),
-    status: draft-status,
+    status: adopted-status,
     abstract: "The Engineering Committee needs a document format to record its decisions. This document provides a rationale for the RFC, defines its purpose, specifies the roles of stakeholders, and provides a style guide."
 )
 
