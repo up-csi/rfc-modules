@@ -1,6 +1,6 @@
-# UP CSI Dev Modules
+# UP CSI RFC Modules
 
-The document template for UP CSI Dev Training Program and DevCamp modules.
+The document template and repository for the UP CSI Engineering Committee Requests for Comments.
 
 # Getting Started
 
