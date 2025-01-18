@@ -25,12 +25,18 @@ The document template and repository for the UP CSI Engineering Committee Reques
 // Note that all arguments are required!
 #show: project.with(
     // The main content of the title section.
-    title: "Module Title",
-    // List of authors who contributed to this module.
+    title: "RFC-XX: Title",
+    // List of authors who contributed to this RFC.
     authors: ("UP CSI",),
+    // The status of the RFC
+    status: #draft-status
+    // A short summary of the RFC
+    abstract: "This document standardizes ..."
 )
 
 // TODO: Your Content
+
+#bibliography("rfc-xx.bib")
 ```
 
 ## Compilation
