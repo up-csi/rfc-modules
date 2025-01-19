@@ -71,7 +71,7 @@ git config --global core.autocrlf false
 
 == Conventional Commits
 
-- *All commit messages* MUST abide by the #link("https://github.blog/changelog/2021-04-28-flag-unsigned-commits-with-vigilant-mode/")[Conventional Commit specification].
+- *All commit messages* MUST abide by the #link("https://www.conventionalcommits.org/en/v1.0.0/")[Conventional Commit specification].
 
 == Pull Requests
 
