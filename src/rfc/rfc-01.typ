@@ -50,6 +50,8 @@ For the purposes of ensuring consistent operation and procedures in version cont
 The default text editor that Git uses might vary across different operating systems and users. Ubuntu users, for example, use `nano` by default and Windows users have the option to use even Notepad as a text editor. To standardize this, the following directive is enforced:
 
 - Git SHOULD be configured to use `vim` by default.
+    - While other editors are equally capable (and possibly less cumbersome to use for things like simple commit messages or `amend`s) to `vim`, the aim of this directive is to softly nudge committee members in the direction of learning `vim` as a text editor for use in more complex tasks such as remote machine use, among others.
+    - That being said, `vim` is only issued as a recommendation and other editors may be used at the discretion of the committee member, but they SHOULD also inform the Director about their reasons for this choice.
 
 ```sh
 git config --global core.editor vim
