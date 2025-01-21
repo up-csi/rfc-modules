@@ -53,7 +53,7 @@
     ]
 
     // Define footer
-    let footer = [
+    let footer = context [
         #v(2em)
         #counter(page).display() | _Unauthorized reproduction or communication of the material is forbidden._
     ]
@@ -72,7 +72,7 @@
 
     // Fancy Source Code Styling
     set raw(syntaxes: "Svelte.sublime-syntax")
-    show raw.where(block: true): code => {
+    show raw.where(block: true): code => context {
         set par(justify: false)
         set align(left)
         let code-lines = code.text.split("\n")
@@ -165,7 +165,7 @@
 )
 
 // Auto-incrementing counter.
-#let count(name, emoji, color, title, body) = {
+#let count(name, emoji, color, title, body) = context {
     let ex = counter(name)
     ex.step()
     showybox(
