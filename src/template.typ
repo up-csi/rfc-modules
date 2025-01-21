@@ -39,7 +39,7 @@
     show raw: set text(font: "JetBrains Mono", size: 9pt, lang: "en")
 
     // Define header
-    let header = [
+    let header = context [
         #stack(dir: ltr, spacing: 8pt)[
             #block(fill: white, height: 34pt, image("res/logo-black.svg"))
         ][
@@ -136,6 +136,16 @@
     // Table of Contents
     outline()
     pagebreak()
+
+    set page(
+        paper: "us-letter",
+        margin: (top: 1in + measure(header, styles).height, bottom: 1in + measure(footer, styles).height, rest: 1in),
+        background: image(height: 100% - 2in, "res/transparent-logo-colored.svg"),
+        header: header,
+        footer: footer,
+        header-ascent: 0%,
+        footer-descent: 0%,
+    )
 
     // Main Content
     set par(justify: true)
