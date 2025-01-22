@@ -33,13 +33,13 @@
     status: "The status of the RFC, whether it has been adopted as a standard by the Director or if it is still a draft (use variables " + `draft-status, proposed-status` + " or " + `approved-status` + ")", 
     abstract: "A summary of the RFC, especially its most important provisions",
     body
-) = style(styles => {
+) = context {
     // Font Settings
     set text(font: "Fira Sans", size: 11pt, lang: "en")
     show raw: set text(font: "JetBrains Mono", size: 9pt, lang: "en")
 
     // Define header
-    let header = [
+    let header = context [
         #stack(dir: ltr, spacing: 8pt)[
             #block(fill: white, height: 34pt, image("res/logo-black.svg"))
         ][
@@ -53,7 +53,7 @@
     ]
 
     // Define footer
-    let footer = [
+    let footer = context [
         #v(2em)
         #counter(page).display() | _Unauthorized reproduction or communication of the material is forbidden._
     ]
@@ -62,7 +62,7 @@
     set document(author: authors, title: title)
     set page(
         paper: "us-letter",
-        margin: (top: 1in + measure(header, styles).height, bottom: 1in + measure(footer, styles).height, rest: 1in),
+        margin: (top: 1in + measure(header).height, bottom: 1in + measure(footer).height, rest: 1in),
         background: image(height: 100% - 2in, "res/transparent-logo-colored.svg"),
         header: header,
         footer: footer,
@@ -72,13 +72,13 @@
 
     // Fancy Source Code Styling
     set raw(syntaxes: "Svelte.sublime-syntax")
-    show raw.where(block: true): code => {
+    show raw.where(block: true): code => context {
         set par(justify: false)
         set align(left)
         let code-lines = code.text.split("\n")
-        let max = measure(box(align(right, text(1em, luma(160), str(code-lines.len()) + h(measure([\s\s], styles).width)))), styles).width
+        let max = measure(box(align(right, text(1em, luma(160), str(code-lines.len()) + h(measure([\s\s]).width))))).width
         let line-nos = range(0, code-lines.len()).map(line => {
-            box(width: max, align(right, text(1em, luma(160), str(line + 1) + h(measure([\s\s], styles).width))))
+            box(width: max, align(right, text(1em, luma(160), str(line + 1) + h(measure([\s\s]).width))))
             hide(code-lines.at(line))
             linebreak()
         })
@@ -140,7 +140,7 @@
     // Main Content
     set par(justify: true)
     body
-})
+}
 
 // Utilities
 #let color(color, body) = text(fill: color, body)
@@ -165,7 +165,7 @@
 )
 
 // Auto-incrementing counter.
-#let count(name, emoji, color, title, body) = {
+#let count(name, emoji, color, title, body) = context {
     let ex = counter(name)
     ex.step()
     showybox(
