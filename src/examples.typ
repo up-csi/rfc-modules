@@ -234,10 +234,13 @@ This is a normal text. _This is an italic text._ *This is a bold text.*
 Something happened, and it must be cited @alvarez_2019_socialization. \
 Multiple sources #cite("alvarez_2019_socialization", "laplante_2014_consultasand", "jerrentrup_2018_teaching") said this instead.
 ```
+
+```typ
 Something happened, and it must be cited @alvarez_2019_socialization. \
 Multiple sources #cite("alvarez_2019_socialization", "laplante_2014_consultasand", "jerrentrup_2018_teaching") said this instead.
+```
 
 ```typ
 #bibliography("ref.bib", style: "ieee")
 ```
-#bibliography("ref.bib", style: "ieee")
+
