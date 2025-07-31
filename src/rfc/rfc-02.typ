@@ -74,8 +74,32 @@ To maintain a cleaner codebase, the use of the `dark:` directive, or any theme d
 
 = Development Proper
 == File Organization<file-org>
+To keep project repositories organized, feature-sliced design SHALL be implemented. The #link("https://github.com/BastiDood/plus-minus")[`plus-minus`] repository of former Director of Engineering Basti Ortiz is an example implementation. Specifically,
+
 === The `$routes` folder
+All files inside the `$routes` folder MUST only be
++ `+` files (e.g. `+page.svelte`), and
++ *page-specific UI* components, stored in a `(ui)` folder in the parent route folder.
+
 === The `$lib` folder
+Everything else in the `src` folder that can be put in a sub folder of `src` and MUST NOT be in the `$routes` folder SHALL be put in the `$lib` folder. To keep the `$lib` folder organized as well, the following folders MUST be maintained:
++ `db`: for all database-related files. Files that MUST be found here are
+    + exported `json` files from the Pseudodatabase and their corresponding images,
+    + helper functions (i.e. the files that parse the JSON according to `valibot` schema), and 
+    + type and model files.
++ `brand`: for all branding-related files (e.g. the theme files). An exception is the favicon file, which stays in the `static` folder.
++ `ui`: for all shared UI components (i.e. templated buttons, tables, cards).
++ `feature`: for all feature\*-specific files (i.e. UI, functions). All features must be bundled in their own folders. If any logic can be generalized,
+    + it MUST go in the `ui` folder _if_ the logic is *UI-only*;
+    + else, it MUST go in the `feature` folder, once again bundled in its own folder.
++ `assets`: for all images shared by multiple pages that don't belong anywhere else.
+
+#note[
+    What counts as a _feature_?
+
+    A _feature_ is defined in this RFC as something that enables the information in stored cookies, local/remote storage, or databases to be updated. Thus, everything else is simply _UI logic_ for the purposes of this RFC.
+]
+
 == `sort-imports` Madness
 Since time immemorial (start of the CSI website development), the `sort-imports` ESLint rule has been Public Enemy \#1 for new contributors. Errors from this rule usually result in hours of debugging and wacky solutions. Thus, this section standardizes import conventions to minimize and avoid errors from `sort-imports`.
 
