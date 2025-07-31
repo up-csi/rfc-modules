@@ -13,13 +13,56 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 The standards outlined in this document are to be adopted for use by the Engineering Committee. Per the purpose of an RFC, the directives herein are to be treated as _standard operating procedure_ for the committee.
 
 = Repository Configuration
-== Necessary Packages
+Due to its speed and ease-of-use, SvelteKit, with TailwindCSS for styling, SHOULD be used to develop web applications until a faster and more intuitive framework has _matured_. 
+
+Due to package maturity and stability, web application projects SHOULD use the Node.js runtime environment until #link(<need-pkg>)[necessary packages] in a more performant runtime environment have _matured_. Further, until a more performant package manager has _matured_ (i.e. v.1), `pnpm` SHOULD be used.
+
+== Necessary Packages<need-pkg>
+Alongside the standard `@sveltejs/kit` and `tailwindcss` Node.js packages and their dependencies, projects MUST include the following packages (specific packages subject to change)
+- JSON validation for type-safety (`valibot`)
+- codebase formatter (`prettier`)
+- code linters for 
+    - HTML (`@linthtml/linthtml`),
+    - [Tailwind]CSS (`stylelint`), 
+    - JavaScript/TypeScript (`eslint`), and 
+    - Svelte (`svelte-check`, `svelte-eslint-parser` (see #link(<sv-rules>)[Svelte-specific Rules]))
+- minifier for HTML (`html-minifier`)
+- icons, if necessary
+
+Further, projects SHOULD include the following plugins
+- An official SvelteKit adapter (`@sveltejs/adapter-<static/node/vercel/cloudflare/netlify>`)
+- `@sveltejs/enhanced-img`: for optimization of local images. Note that this plugin does not work for dynamically-loaded images. See #link(<enhanced-img>)[`Enhanced Images`]
+- `@tailwindcss/typography`: for typography
+
 === Dependencies vs devDependencies
+Packages from which any logic is imported from into any file in the `src` folder MUST be listed as _dependencies_ (e.g. #link(<enhanced-img>)[importing `EnhancedImgAttributes` from `@sveltejs/enhanced-img`]). Otherwise, they are listed as _devDependencies_ (e.g. linters and formatters).
+
 == Scripts
+The following scripts MUST be included:
+- `dev` $=>$ `vite dev`: starts the local development server
+- `build` $=>$ `vite build`: builds and optimizes the codebase into a `build` folder
+- `preview` $=>$ `vite preview`: enables local build preview
+- `sync` $=>$ `svelte-kit sync`: creates the `.sveltekit` folder, `tsconfig.json`, and all generated types of the project
+- Formatting scripts
+    - `fmt` $=>$ `prettier --check .`: checks for formatting issues in the codebase
+    - `fmt:fix` $=>$ `prettier --write .`: applies Prettier's suggestions
+- `lint:<language>`: lints the codebase. Linters for the following languages SHALL be maintained
+    - `html`$=>$ `linthtml src/**/*.html`
+    - `css` $=>$ `stylelint src/**/*.css`
+    - `js` $=>$ `eslint` (applicable to `.ts` files as well)
+    - `svelte` $=>$ `svelte-check --tsconfig ./tsconfig.json`
+
+If default scripts differ from these, said defaults MUST be changed to match the scripts above.
+
+These scripts are executed by adding `pnpm` or `pnpm run` before them (e.g. `pnpm sync`, `pnpm run dev`).
+
+#note[
+    `pnpm sync` MUST be run *in the same environment* as `pnpm lint:svelte` right before running the Svelte linter as the generated types MUST be set-up prior to linting `.svelte` files.
+]
 
 = Dependency-Related Configurations
 == Linters and formatters
-=== Svelte-specific Rules
+=== Svelte-specific Rules<sv-rules>
 === ESLint Rules
 == Custom Themes with TailwindCSS
 The official project theme/palette, as set by the designated UI/UX designer, MUST be stored in a `.css` file, hereby known as a _theme file_. If there are multiple themes, then there must be multiple theme files. The #link(<file-org>)[File Organization] section specifies where the theme files SHALL be located. 
@@ -98,7 +141,7 @@ Additional reminders for the `sort-imports` rule:
     import learn from '$lib/assets/cartoons/learn.svg';
     ```
 
-== Enhanced Images
+== Enhanced Images<enhanced-img>
 *For local images*, the `<enhanced:img />` tag SHOULD be preferred over the `<img />` tag. As such,
 - images SHOULD be in the `.webp` format.
 - the `EnhancedImgAttributes` type SHOULD be imported from `@sveltejs/enhanced-img` for type validation
