@@ -94,6 +94,19 @@ Additional reminders for the `sort-imports` rule:
     ```
 
 == Enhanced Images
+*For local images*, the `<enhanced:img />` tag SHOULD be preferred over the `<img />` tag. As such,
+- images SHOULD be in the `.webp` format.
+- the `EnhancedImgAttributes` type SHOULD be imported from `@sveltejs/enhanced-img` for type validation
+    ```html
+    <script lang="ts">
+        import type { EnhancedImgAttributes } from '@sveltejs/enhanced-img';
+
+        const src: EnhancedImgAttributes['src'];
+    </script>
+
+    <enhanced:img {src} />
+    ```
+
 == Miscellaneous Conventions
 
 = Before Merging to `main`
