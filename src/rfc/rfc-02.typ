@@ -65,6 +65,14 @@ These scripts are executed by adding `pnpm` or `pnpm run` before them (e.g. `pnp
 All linters and formatters SHOULD use their respective recommended configurations. Further, project maintainers MUST be on the lookout for package conflicts and special Svelte[Kit]- and TailwindCSS-related configurations with said linters and formatters.
 
 === Svelte-specific Rules<sv-rules>
+Currently, it is RECOMMENDED to use the `svelte-eslint-parser` to parse `.svelte` files for further linting via `eslint-plugin-svelte`. This means that custom rules for linting `.svelte` files can be specified for use by the `svelte-eslint-parser`. For simplicity and stability, only the rules in the recommended configuration for `eslint-plugin-svelte` SHOULD be used. However, some of these rules are RECOMMENDED to be overridden as follows:
+```js
+rules: {
+    'svelte/no-at-html-tags': 'warn',
+    'svelte/require-each-key': 'off',
+},
+```
+
 === ESLint Rules
 == Custom Themes with TailwindCSS
 The official project theme/palette, as set by the designated UI/UX designer, MUST be stored in a `.css` file, hereby known as a _theme file_. If there are multiple themes, then there must be multiple theme files. The #link(<file-org>)[File Organization] section specifies where the theme files SHALL be located. 
