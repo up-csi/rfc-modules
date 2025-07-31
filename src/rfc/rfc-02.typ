@@ -121,7 +121,24 @@ Additional reminders for the `sort-imports` rule:
     - UPPER_CASE for constants
 
 = Before Merging to `main`
+Contributors and maintainers MUST strive to keep the `main` branch of remote repositories at a *green* state at *all times*. Thus, automated workflows SHOULD be used to run and check formatters, linters, and builders on each pull requested feature branch prior to pushing to `main`.
 
+On local, 
+```bash
+# the formatters,
+pnpm fmt
+# then, if there are formatting issues,
+pnpm fmt:fix
+
+# the linters,
+pnpm lint
+
+# and the builders
+pnpm build
+# then, to preview the built app
+pnpm preview
+```
+MUST be run and any issues MUST be corrected prior to making a pull request to the remote repository.
 
 = Content Management
 == Type Validation
