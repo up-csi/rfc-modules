@@ -322,3 +322,6 @@ Some of the most popular content management systems (CMSs) today pack the conten
 Further, due to its ease-of-use, PostgreSQL integration, and free self-hosting (provided the organization's revenue is under \$5M), Directus is highly RECOMMENDED to be used in projects where CMSs are needed.
 
 = Future
+#note[
+    This RFC is subject to change if better technologies mature and/or missing technologies and/or standards are added.
+]
