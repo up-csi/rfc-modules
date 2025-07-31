@@ -2,9 +2,9 @@
 
 #show: project.with(
     "RFC-02: Web Application Tech Stack",
-    authors: ("Eriene Galinato", ),
+    authors: ("Eriene Galinato",),
     status: draft-status,
-    abstract: "This document codifies and standardizes the tech stack to be adopted by CSI for creating web applications, with the aim of standardizing ESLint rules, file organization, and content management, among others."
+    abstract: "This document codifies and standardizes the tech stack to be adopted by CSI for creating web applications, with the aim of standardizing ESLint rules, file organization, and content management, among others.",
 )
 
 = Preamble
@@ -13,7 +13,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 The standards outlined in this document are to be adopted for use by the Engineering Committee. Per the purpose of an RFC, the directives herein are to be treated as _standard operating procedure_ for the committee.
 
 = Repository Configuration
-Due to its speed and ease-of-use, SvelteKit, with TailwindCSS for styling, SHOULD be used to develop web applications until a faster and more intuitive framework has _matured_. 
+Due to its speed and ease-of-use, SvelteKit, with TailwindCSS for styling, SHOULD be used to develop web applications until a faster and more intuitive framework has _matured_.
 
 Due to package maturity and stability, web application projects SHOULD use the Node.js runtime environment until #link(<need-pkg>)[necessary packages] in a more performant runtime environment have _matured_. Further, until a more performant package manager has _matured_ (i.e. v.1), `pnpm` SHOULD be used.
 
@@ -21,10 +21,10 @@ Due to package maturity and stability, web application projects SHOULD use the N
 Alongside the standard `@sveltejs/kit` and `tailwindcss` Node.js packages and their dependencies, projects MUST include the following packages (specific packages subject to change)
 - JSON validation for type-safety (`valibot`)
 - codebase formatter (`prettier`)
-- code linters for 
+- code linters for
     - HTML (`@linthtml/linthtml`),
-    - [Tailwind]CSS (`stylelint`), 
-    - JavaScript/TypeScript (`eslint`), and 
+    - [Tailwind]CSS (`stylelint`),
+    - JavaScript/TypeScript (`eslint`), and
     - Svelte (`svelte-check`, `svelte-eslint-parser` (see #link(<sv-rules>)[Svelte-specific Rules]))
 - minifier for HTML (`html-minifier`)
 - icons, if necessary
@@ -61,7 +61,7 @@ These scripts are executed by adding `pnpm` or `pnpm run` before them (e.g. `pnp
 ]
 
 = Dependency-Related Configurations
-== Linters and formatters
+== Linters and Formatters
 All linters and formatters SHOULD use their respective recommended configurations. Further, project maintainers MUST be on the lookout for package conflicts and special Svelte[Kit]- and TailwindCSS-related configurations with said linters and formatters.
 
 === Svelte-specific Rules<sv-rules>
@@ -165,7 +165,7 @@ rules: {
 ```
 
 == Custom Themes with TailwindCSS
-The official project theme/palette, as set by the designated UI/UX designer, MUST be stored in a `.css` file, hereby known as a _theme file_. If there are multiple themes, then there must be multiple theme files. The #link(<file-org>)[File Organization] section specifies where the theme files SHALL be located. 
+The official project theme/palette, as set by the designated UI/UX designer, MUST be stored in a `.css` file, hereby known as a _theme file_. If there are multiple themes, then there must be multiple theme files. The #link(<file-org>)[File Organization] section specifies where the theme files SHALL be located.
 
 Aside from following TailwindCSS syntax, the colors in the theme file MUST adhere to the format set by the Branding and Creatives Committee (i.e. HEX/RGB/HSL format).
 
@@ -185,7 +185,7 @@ All files inside the `$routes` folder MUST only be
 Everything else in the `src` folder that can be put in a sub folder of `src` and MUST NOT be in the `$routes` folder SHALL be put in the `$lib` folder. To keep the `$lib` folder organized as well, the following folders MUST be maintained:
 + `db`: for all database-related files. Files that MUST be found here are
     + exported `json` files from the Pseudodatabase and their corresponding images,
-    + helper functions (i.e. the files that parse the JSON according to `valibot` schema), and 
+    + helper functions (i.e. the files that parse the JSON according to `valibot` schema), and
     + type and model files.
 + `brand`: for all branding-related files (e.g. the theme files). An exception is the favicon file, which stays in the `static` folder.
 + `ui`: for all shared UI components (i.e. templated buttons, tables, cards).
@@ -290,7 +290,7 @@ Additional reminders for the `sort-imports` rule:
 = Before Merging to `main`
 Contributors and maintainers MUST strive to keep the `main` branch of remote repositories at a *green* state at *all times*. Thus, automated workflows SHOULD be used to run and check formatters, linters, and builders on each pull requested feature branch prior to pushing to `main`.
 
-On local, 
+On local,
 ```bash
 # the formatters,
 pnpm fmt
