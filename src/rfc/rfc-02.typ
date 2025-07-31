@@ -185,7 +185,16 @@ MUST be run and any issues MUST be corrected prior to making a pull request to t
 
 = Content Management
 == Type Validation
+For projects that deal with local JSON or dynamically loaded content, it is a MUST to type validate incoming JSON to prevent errors and other undefined and unexpected behavior. Thus, schemas and types for these JSON MUST be defined.
+
+The RECOMMENDED schema library for this is `valibot`.
+
 == Database
+PostgreSQL is the RECOMMENDED option for a database due to familiarity, scalability, and extensibility.
+
 == Content Management System
+Some of the most popular content management systems (CMSs) today pack the content management with the content presentation. To avoid the pitfalls of such systems (e.g. lack of freedom and flexibility, slower performance with higher volumes of content, and security issues), it is highly RECOMMENDED to _decouple_ the frontend from the backend and use a _headless CMS_ instead.
+
+Further, due to its ease-of-use, PostgreSQL integration, and free self-hosting (provided the organization's revenue is under \$5M), Directus is highly RECOMMENDED to be used in projects where CMSs are needed.
 
 = Future
