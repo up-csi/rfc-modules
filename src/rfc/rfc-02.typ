@@ -62,6 +62,8 @@ These scripts are executed by adding `pnpm` or `pnpm run` before them (e.g. `pnp
 
 = Dependency-Related Configurations
 == Linters and formatters
+All linters and formatters SHOULD use their respective recommended configurations. Further, project maintainers MUST be on the lookout for package conflicts and special Svelte[Kit]- and TailwindCSS-related configurations with said linters and formatters.
+
 === Svelte-specific Rules<sv-rules>
 === ESLint Rules
 == Custom Themes with TailwindCSS
