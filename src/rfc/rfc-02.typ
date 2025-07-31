@@ -121,9 +121,7 @@ Additional reminders for the `sort-imports` rule:
     - UPPER_CASE for constants
 
 = Before Merging to `main`
-== Version Control
-=== Commit Messages
-== Automated GitHub Workflows
+
 
 = Content Management
 == Type Validation
