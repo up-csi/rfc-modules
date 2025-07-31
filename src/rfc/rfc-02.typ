@@ -108,6 +108,12 @@ Additional reminders for the `sort-imports` rule:
     ```
 
 == Miscellaneous Conventions
+- *JavaScript vs TypeScript*: If TypeScript is not necessary for type-checking *and* type-checking is at a minimum, JavaScript SHOULD be preferred over TypeScript as TypeScript files tend to slow down the build process.
+- *Single- vs Double-quotes*: Single-quotes SHOULD be preferred for JavaScript and TypeScript files, while double-quotes SHOULD be preferred for HTML and JSON files.
+- *Naming Conventions*: The following conventions SHALL be used
+    - camelCase for variables, attributes, and functions
+    - PascalCase for types, models, and classes
+    - UPPER_CASE for constants
 
 = Before Merging to `main`
 == Version Control
