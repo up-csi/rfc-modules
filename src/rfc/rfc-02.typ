@@ -171,10 +171,25 @@ Additional reminders for the `sort-imports` rule:
 == Miscellaneous Conventions
 - *JavaScript vs TypeScript*: If TypeScript is not necessary for type-checking *and* type-checking is at a minimum, JavaScript SHOULD be preferred over TypeScript as TypeScript files tend to slow down the build process.
 - *Single- vs Double-quotes*: Single-quotes SHOULD be preferred for JavaScript and TypeScript files, while double-quotes SHOULD be preferred for HTML and JSON files.
-- *Naming Conventions*: The following conventions SHALL be used
-    - camelCase for variables, attributes, and functions
-    - PascalCase for types, models, and classes
-    - UPPER_CASE for constants
+- *Naming Convention*: Based on the #link("https://google.github.io/styleguide/tsguide.html#naming")[Google TypeScript Style Guide] and #link("https://dev.to/somedood/a-grammar-based-naming-convention-13jf")[this Basticle], the following conventions SHALL be used \
+    #table(
+        columns: 4,
+
+        table.header([*Type*], [*Case*], [*Grammar*], [*Examples*]),
+        [Arrays], [camelCase], [plural or collective noun], [`events`, `committee`, `teams`],
+        [Booleans], [camelCase], ["yes-or-no question"], [`isDone`, `isExec`, `hasGraduated`],
+        [Classes, Schemas, and Types], [PascalCase], [singular noun], [`Member`, `Officer`, `Committee`],
+        [Class Methods and Functions],
+        [camelCase],
+        ["transitive verb + direct object" in the imperative mood],
+        [`getTeam`, `setCommitteeColor`, `attackTitan`],
+
+        [Constants], [UPPER_SNAKE_CASE], [whatever they're supposed to be called], [mathematical constants like `PI`],
+        [Everything Else], [camelCase], [singular noun], [`count`, `color`, `memName`],
+    )
+    In addition, please name _appropriately_.
+
+It is RECOMMENDED to refer to the #link("https://google.github.io/styleguide/tsguide.html")[Google TypeScript Style Guide] if there are style considerations not covered in this RFC.
 
 = Before Merging to `main`
 Contributors and maintainers MUST strive to keep the `main` branch of remote repositories at a *green* state at *all times*. Thus, automated workflows SHOULD be used to run and check formatters, linters, and builders on each pull requested feature branch prior to pushing to `main`.
