@@ -161,7 +161,8 @@ Additional reminders for the `sort-imports` rule:
     <script lang="ts">
         import type { EnhancedImgAttributes } from '@sveltejs/enhanced-img';
 
-        const src: EnhancedImgAttributes['src'];
+        type Props = Pick<EnhancedImgAttributes, 'src'>;
+        const { src }: Props = $props();
     </script>
 
     <enhanced:img {src} />
