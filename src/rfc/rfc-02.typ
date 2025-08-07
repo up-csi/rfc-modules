@@ -25,11 +25,7 @@ Due to package maturity and stability, projects SHOULD use the Node.js runtime e
 Alongside the standard `@sveltejs/kit` and `tailwindcss` Node.js packages and their dependencies, projects MUST include the following packages (specific packages subject to change)
 - JSON validation for type-safety (`valibot`)
 - codebase formatter (`prettier`)
-- code linters for
-    - HTML (`@linthtml/linthtml`),
-    - [Tailwind]CSS (`stylelint`),
-    - JavaScript/TypeScript (`eslint`), and
-    - Svelte (`svelte-check`, `svelte-eslint-parser` (see #link(<sv-rules>)[Svelte-specific Rules]))
+- codebase linters (`svelte-check`, `eslint`)
 - minifier for HTML (`html-minifier`)
 - icons, if necessary
 
@@ -50,11 +46,9 @@ The following scripts MUST be included:
 - Formatting scripts
     - `fmt` $=>$ `prettier --check .`: checks for formatting issues in the codebase
     - `fmt:fix` $=>$ `prettier --write .`: applies Prettier's suggestions
-- `lint:<language>`: lints the codebase. Linters for the following languages SHALL be maintained
-    - `html`$=>$ `linthtml src/**/*.html`
-    - `css` $=>$ `stylelint src/**/*.css`
-    - `js` $=>$ `eslint` (applicable to `.ts` files as well)
-    - `svelte` $=>$ `svelte-check --tsconfig ./tsconfig.json`
+- `lint` $=>$ `pnpm --parallel /^lint:/`: lints the codebase.
+    - `lint:eslint` $=>$ `eslint --cache .`
+    - `lint:svelte` $=>$ `svelte-check --tsconfig ./tsconfig.json`
 
 If default scripts differ from these, said defaults MUST be changed to match the scripts above.
 
