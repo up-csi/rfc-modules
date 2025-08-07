@@ -26,7 +26,6 @@ Alongside the standard `@sveltejs/kit` and `tailwindcss` Node.js packages and th
 - JSON validation for type-safety (`valibot`)
 - codebase formatter (`prettier`)
 - codebase linters (`svelte-check`, `eslint`)
-- minifier for HTML (`html-minifier`)
 - HTML sanitizer (`sanitize-html`), if using the `@html` keyword
 
 Further, projects SHOULD include the following plugins
