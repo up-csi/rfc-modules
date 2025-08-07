@@ -28,6 +28,7 @@ Alongside the standard `@sveltejs/kit` and `tailwindcss` Node.js packages and th
 - codebase linters (`svelte-check`, `eslint`)
 - minifier for HTML (`html-minifier`)
 - icons, if necessary
+- HTML sanitizer (`sanitize-html`), if using the `@html` keyword
 
 Further, projects SHOULD include the following plugins
 - An official SvelteKit adapter (`@sveltejs/adapter-<static/node/vercel/cloudflare/netlify>`)
