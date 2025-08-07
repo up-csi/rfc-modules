@@ -68,6 +68,10 @@ These scripts are executed by adding `pnpm` or `pnpm run` before them (e.g. `pnp
 == Linters and Formatters
 All linters and formatters SHOULD use their respective recommended and/or standard configurations. Further, project maintainers MUST be on the lookout for package conflicts and special Svelte[Kit]- and TailwindCSS-related configurations with said linters and formatters.
 
+#note[
+    If using `typescript-eslint`, it is also RECOMMENDED to use its stylistic configuration.
+]
+
 == Custom Themes with TailwindCSS
 The official project theme/palette, as set by the designated UI/UX designer, MUST be stored in a `.css` file, hereby known as a _theme file_. If there are multiple themes, then there must be multiple theme files. The #link(<file-org>)[File Organization] section specifies where the theme files SHALL be located.
 
