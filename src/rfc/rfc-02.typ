@@ -49,8 +49,8 @@ The following scripts MUST be included:
     - `fmt` $=>$ `prettier --experimental-cli --check .`: checks for formatting issues in the codebase
     - `fmt:fix` $=>$ `prettier --experimental-cli --write .`: applies Prettier's suggestions
 - `lint` $=>$ `pnpm --parallel /^lint:/`: lints the codebase.
-    - `lint:eslint` $=>$ `eslint --cache .`
-    - `lint:svelte` $=>$ `svelte-check --tsconfig ./tsconfig.json`
+    - `lint:es` $=>$ `eslint --cache .`
+    - `lint:sv` $=>$ `svelte-check --tsconfig ./tsconfig.json`
 
 If default scripts differ from these, said defaults MUST be changed to match the scripts above.
 
