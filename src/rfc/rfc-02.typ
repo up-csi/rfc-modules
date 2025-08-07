@@ -66,7 +66,7 @@ These scripts are executed by adding `pnpm` or `pnpm run` before them (e.g. `pnp
 
 = Dependency-Related Configurations
 == Linters and Formatters
-All linters and formatters SHOULD use their respective recommended configurations. Further, project maintainers MUST be on the lookout for package conflicts and special Svelte[Kit]- and TailwindCSS-related configurations with said linters and formatters.
+All linters and formatters SHOULD use their respective recommended and/or standard configurations. Further, project maintainers MUST be on the lookout for package conflicts and special Svelte[Kit]- and TailwindCSS-related configurations with said linters and formatters.
 
 === Svelte-specific Rules<sv-rules>
 Currently, it is RECOMMENDED to use the `svelte-eslint-parser` to parse `.svelte` files for further linting via `eslint-plugin-svelte`. This means that custom rules for linting `.svelte` files can be specified for use by the `svelte-eslint-parser`. For simplicity and stability, only the rules in the recommended configuration for `eslint-plugin-svelte` SHOULD be used. However, some of these rules are RECOMMENDED to be overridden as follows:
