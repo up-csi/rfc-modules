@@ -169,7 +169,9 @@ Additional reminders for the `sort-imports` rule:
     ```
 
 == Miscellaneous Conventions
-- *JavaScript vs TypeScript*: If TypeScript is not necessary for type-checking *and* type-checking is at a minimum, JavaScript SHOULD be preferred over TypeScript as TypeScript files tend to slow down the build process.
+- *JavaScript vs TypeScript*: If type inference is _enough_ or type construction and/or annotations are _not necessary_, JavaScript SHOULD be preferred over TypeScript.
+
+    TypeScript is a superset of JavaScript and is usually just used for its ease-of-use when it comes to handling types. Moreover, #link("https://www.typescriptlang.org/play/?target=1&e=4#example/objects-and-arrays")[types are _stripped_ away when TypeScript code is transpiled to JavaScript]. Thus, it's overkill if plain JavaScript is put in a TypeScript file.
 - *Single- vs Double-quotes*: Single-quotes SHOULD be preferred for JavaScript and TypeScript files, while double-quotes SHOULD be preferred for HTML and JSON files.
 - *Naming Convention*: Based on the #link("https://google.github.io/styleguide/tsguide.html#naming")[Google TypeScript Style Guide] and #link("https://dev.to/somedood/a-grammar-based-naming-convention-13jf")[this Basticle], the following conventions SHALL be used \
     #table(
