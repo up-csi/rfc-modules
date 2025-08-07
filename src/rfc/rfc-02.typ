@@ -46,8 +46,8 @@ The following scripts MUST be included:
 - `preview` $=>$ `vite preview`: enables local build preview
 - `prepare` $=>$ `svelte-kit sync`: creates the `.sveltekit` folder, `tsconfig.json`, and all generated types of the project
 - Formatting scripts
-    - `fmt` $=>$ `prettier --check .`: checks for formatting issues in the codebase
-    - `fmt:fix` $=>$ `prettier --write .`: applies Prettier's suggestions
+    - `fmt` $=>$ `prettier --experimental-cli --check .`: checks for formatting issues in the codebase
+    - `fmt:fix` $=>$ `prettier --experimental-cli --write .`: applies Prettier's suggestions
 - `lint` $=>$ `pnpm --parallel /^lint:/`: lints the codebase.
     - `lint:eslint` $=>$ `eslint --cache .`
     - `lint:svelte` $=>$ `svelte-check --tsconfig ./tsconfig.json`
