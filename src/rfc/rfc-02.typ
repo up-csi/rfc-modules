@@ -213,9 +213,11 @@ MUST be run and any issues MUST be corrected prior to making a pull request to t
 
 = Content Management
 == Type Validation
-For projects that deal with local JSON or dynamically loaded content, it is a MUST to type validate incoming JSON to prevent errors and other undefined and unexpected behavior. Thus, schemas and types for these JSON MUST be defined.
+For projects that deal with local JSON or dynamically loaded content, it is a MUST to type validate incoming JSON to prevent type errors and other undefined and unexpected behavior. Thus, schemas and types for these JSON MUST be declared and these JSON MUST be parsed through the appropriate schema to validate the JSON.
 
-The RECOMMENDED schema library for this is `valibot`.
+Moreover, #link("https://www.typescriptlang.org/play/?target=1&e=4#example/objects-and-arrays")[types are _stripped_ away when TypeScript code is transpiled to JavaScript]. Thus, TypeScript doesn't _exist_ at runtime.
+
+Thus, it is a MUST to use a schema-declaration and validation library which ensures type checks at _runtime_. The RECOMMENDED library for this is `valibot`.
 
 == Database
 PostgreSQL is the RECOMMENDED option for a database due to familiarity, scalability, and extensibility.
