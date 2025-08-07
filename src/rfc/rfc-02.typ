@@ -44,7 +44,7 @@ The following scripts MUST be included:
 - `dev` $=>$ `vite dev`: starts the local development server
 - `build` $=>$ `vite build`: builds and optimizes the codebase into a `build` folder
 - `preview` $=>$ `vite preview`: enables local build preview
-- `sync` $=>$ `svelte-kit sync`: creates the `.sveltekit` folder, `tsconfig.json`, and all generated types of the project
+- `prepare` $=>$ `svelte-kit sync`: creates the `.sveltekit` folder, `tsconfig.json`, and all generated types of the project
 - Formatting scripts
     - `fmt` $=>$ `prettier --check .`: checks for formatting issues in the codebase
     - `fmt:fix` $=>$ `prettier --write .`: applies Prettier's suggestions
@@ -54,10 +54,14 @@ The following scripts MUST be included:
 
 If default scripts differ from these, said defaults MUST be changed to match the scripts above.
 
-These scripts are executed by adding `pnpm` or `pnpm run` before them (e.g. `pnpm sync`, `pnpm run dev`).
+These scripts are executed by adding `pnpm` or `pnpm run` before them (e.g. `pnpm prepare`, `pnpm run dev`).
 
 #note[
-    `pnpm sync` MUST be run *in the same environment* as `pnpm lint:svelte` right before running the Svelte linter as the generated types MUST be set-up prior to linting `.svelte` files.
+    Some interesting things regarding `pnpm prepare` and `svelte-kit sync`:
+    - `pnpm prepare` is run after `pnpm install` as a #link("https://docs.npmjs.com/cli/v10/using-npm/scripts#life-cycle-operation-order")[lifecycle script]
+    - `svelte-kit sync` #link("https://svelte.dev/docs/kit/cli#svelte-kit-sync")[generates _inferred_ types] for variables and puts it in the `.svelte-kit` folder.
+
+    Thus, `svelte-kit sync` MUST be run *in the same environment* as `.env` variables before using them (e.g. importing, linting) as generated types MUST be set-up before use. As such, on GitHub workflows, `.env` variable declaration may be seen in the installation step.
 ]
 
 = Dependency-Related Configurations
