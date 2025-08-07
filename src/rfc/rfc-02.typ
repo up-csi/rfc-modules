@@ -95,7 +95,7 @@ All files inside the `src/routes` folder MUST only be
 + `+` files (e.g. `+page.svelte`), and
 + *page-specific UI* components, stored in a `(ui)` folder in the parent route folder.
 
-Everything else in the `src` folder that can be put in a sub folder of `src` and MUST NOT be in the `src/routes` folder SHALL be put in the `src/lib` folder (aliased as `$lib`).
+Everything else in the `src` folder that can be put in a sub folder of `src` and MUST NOT be in the `src/routes` folder SHALL be put in the `src/lib` folder (aliased as `$lib`). See #link(<lib-folder>)[The `$lib` Folder] for a recommended file organization for `$lib`.
 
 == Import-sorting Madness
 Import-sorting is quite helpful for seeing what's already imported and from which packages. However, since time immemorial (start of the CSI website development), the `sort-imports` ESLint rule has been Public Enemy \#1 for new contributors due to its complexity. Errors from this rule usually result in hours of debugging and wacky solutions. Thus, it is RECOMMENDED to use `@bastidood/eslint-plugin-imsort` for automatically sorting imports (via #link(<scripts>)[`eslint --fix`]).
@@ -349,3 +349,10 @@ rules: {
 #warning[
     The `svelte/no-at-html-tags` rule is meant to guard against cross-site scripting vulnerabilities. As such, there MUST be an HTML sanitizer in the project before setting the rule to `warn`.
 ]
+
+== The `$lib` Folder<lib-folder>
+A RECOMMENDED file organization for the `$lib` folder, based on feature-sliced design (#link("https://dev.to/somedood/youre-slicing-your-architecture-wrong-4ob9")[this Basticle sums it up quite nicely]), is as follows:
++ `brand`: for all branding-related files (e.g. the theme files). An exception is the favicon file, which stays in the `static` folder.
++ `ui`: for all UI components that aren't tailor-made for the current application and can be reused across projects (e.g. those from component libraries like `shadcn-svelte`).
++ `feature`: for all features (i.e. UI components, functions) that are tailor-made for the current application that are _not_ page-specific UI components. All features must be bundled in their own subfolders.
++ `assets`: for all images shared by multiple UI components that don't belong anywhere else.
