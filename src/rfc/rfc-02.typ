@@ -33,7 +33,11 @@ Further, projects SHOULD include the following plugins
 - `@sveltejs/enhanced-img`: for optimization of local images. Note that this plugin does not work for dynamically-loaded images. See #link(<enhanced-img>)[`Enhanced Images`]
 
 === Dependencies vs devDependencies
-Packages from which any logic is imported from into any file in the `src` folder MUST be listed as _dependencies_ (e.g. #link(<enhanced-img>)[importing `EnhancedImgAttributes` from `@sveltejs/enhanced-img`]). Otherwise, they are listed as _devDependencies_ (e.g. linters and formatters).
+`devDependencies` are the packages needed during development while `dependencies` are the packages that the project depends on when _running_.
+
+Thus, if a package is needed during _runtime_ (i.e. imported in the frontend and/or backend), the package is a `dependency`. Else, this most probably means that the package isn't needed at runtime, but is needed during development (e.g. writing tests, formatting and linting code); as such, the package is a `devDependency`.
+
+For more information, please see #link("https://github.com/up-csi/up-csi.github.io/pull/97#discussion_r1811336963")[this comment] on the CSI website.
 
 == Scripts
 The following scripts MUST be included:
