@@ -17,6 +17,10 @@ Due to its ease-of-use, SvelteKit, with TailwindCSS for styling, SHOULD be used 
 
 Due to package maturity and stability, projects SHOULD use the Node.js runtime environment until #link(<need-pkg>)[necessary packages] in a more performant runtime environment have _matured_. Further, until a more performant package manager has _matured_ (i.e. v.1), `pnpm` SHOULD be used.
 
+#note[
+    This RFC is subject to change if better technologies mature and/or missing technologies and/or standards are added.
+]
+
 == Necessary Packages<need-pkg>
 Alongside the standard `@sveltejs/kit` and `tailwindcss` Node.js packages and their dependencies, projects MUST include the following packages (specific packages subject to change)
 - JSON validation for type-safety (`valibot`)
@@ -320,8 +324,3 @@ PostgreSQL is the RECOMMENDED option for a database due to familiarity, scalabil
 Some of the most popular content management systems (CMSs) today pack the content management with the content presentation. To avoid the pitfalls of such systems (e.g. lack of freedom and flexibility, slower performance with higher volumes of content, and security issues), it is highly RECOMMENDED to _decouple_ the frontend from the backend and use a _headless CMS_ instead.
 
 Further, due to its ease-of-use, PostgreSQL integration, and free self-hosting (provided the organization's revenue is under \$5M), Directus is highly RECOMMENDED to be used in projects where CMSs are needed.
-
-= Future
-#note[
-    This RFC is subject to change if better technologies mature and/or missing technologies and/or standards are added.
-]
