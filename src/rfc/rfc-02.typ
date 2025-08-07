@@ -27,13 +27,11 @@ Alongside the standard `@sveltejs/kit` and `tailwindcss` Node.js packages and th
 - codebase formatter (`prettier`)
 - codebase linters (`svelte-check`, `eslint`)
 - minifier for HTML (`html-minifier`)
-- icons, if necessary
 - HTML sanitizer (`sanitize-html`), if using the `@html` keyword
 
 Further, projects SHOULD include the following plugins
 - An official SvelteKit adapter (`@sveltejs/adapter-<static/node/vercel/cloudflare/netlify>`)
 - `@sveltejs/enhanced-img`: for optimization of local images. Note that this plugin does not work for dynamically-loaded images. See #link(<enhanced-img>)[`Enhanced Images`]
-- `@tailwindcss/typography`: for typography
 
 === Dependencies vs devDependencies
 Packages from which any logic is imported from into any file in the `src` folder MUST be listed as _dependencies_ (e.g. #link(<enhanced-img>)[importing `EnhancedImgAttributes` from `@sveltejs/enhanced-img`]). Otherwise, they are listed as _devDependencies_ (e.g. linters and formatters).
