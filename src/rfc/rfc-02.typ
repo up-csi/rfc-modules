@@ -73,6 +73,14 @@ All linters and formatters SHOULD use their respective recommended and/or standa
     If using `typescript-eslint`, it is also RECOMMENDED to use its stylistic configuration.
 ]
 
+See #link(<es-rules>)[ESLint Rules] for the full list of RECOMMENDED rules to be overridden or added.
+
+#warning[
+    The magic comment, \
+    `// eslint-disable-next-line` \
+    SHOULD NOT be used unless it has been shown to project maintainers that it is *absolutely* necessary.
+]
+
 == Custom Themes with TailwindCSS
 The official project theme/palette, as set by the designated UI/UX designer, MUST be stored in a `.css` file, hereby known as a _theme file_. If there are multiple themes, then there must be multiple theme files. The #link(<file-org>)[File Organization] section specifies where the theme files SHALL be located.
 
@@ -173,3 +181,171 @@ PostgreSQL is the RECOMMENDED option for a database due to familiarity, scalabil
 Some of the most popular content management systems (CMSs) today pack the content management with the content presentation. To avoid the pitfalls of such systems (e.g. lack of freedom and flexibility, slower performance with higher volumes of content, and security issues), it is highly RECOMMENDED to _decouple_ the frontend from the backend and use a _headless CMS_ instead.
 
 Further, due to its ease-of-use, PostgreSQL integration, and free self-hosting (provided the organization's revenue is under \$5M), Directus is highly RECOMMENDED to be used in projects where CMSs are needed.
+
+= Appendix
+== ESLint Rules<es-rules>
+For simplicity and stability, only the rules in the recommended configurations SHOULD be used. However, some of these rules are RECOMMENDED to be overridden and some other rules are RECOMMENDED to be added as follows:
+
+#note[
+    Majority of the rules listed here come from #link("https://github.com/BastiDood/sveltekit-tailwind-template/blob/main/eslint.config.js")[BastiDood/sveltekit-tailwind-template].
+]
+
+```js
+// @html-eslint/eslint-plugin
+rules: {
+    '@html-eslint/indent': 'off',
+    '@html-eslint/no-duplicate-class': 'error',
+    '@html-eslint/no-nested-interactive': 'error',
+    '@html-eslint/no-target-blank': 'error',
+    '@html-eslint/prefer-https': 'error',
+    '@html-eslint/require-button-type': 'error',
+    '@html-eslint/require-closing-tags': 'off',
+    '@html-eslint/require-explicit-size': 'error',
+    '@html-eslint/require-meta-charset': 'error',
+    '@html-eslint/sort-attrs': 'error',
+    '@html-eslint/no-abstract-roles': 'error',
+    '@html-eslint/no-accesskey-attrs': 'error',
+    '@html-eslint/no-aria-hidden-body': 'error',
+    '@html-eslint/no-heading-inside-button': 'error',
+    '@html-eslint/no-invalid-role': 'error',
+    '@html-eslint/no-non-scalable-viewport': 'error',
+    '@html-eslint/no-positive-tabindex': 'error',
+    '@html-eslint/no-skip-heading-levels': 'warn',
+    '@html-eslint/require-form-method': 'error',
+    '@html-eslint/require-frame-title': 'error',
+    '@html-eslint/require-input-label': 'error',
+    '@html-eslint/require-meta-viewport': 'error',
+}
+```
+
+```js
+// @eslint/css
+rules: {
+    'css/no-invalid-at-rules': 'off',
+}
+```
+
+```js
+// @eslint/js, typescript-eslint
+rules: {
+    '@typescript-eslint/class-methods-use-this': 'error',
+    '@typescript-eslint/default-param-last': 'error',
+    '@typescript-eslint/init-declarations': 'error',
+    '@typescript-eslint/method-signature-style': 'error',
+    '@typescript-eslint/no-import-type-side-effects': 'error',
+    '@typescript-eslint/no-loop-func': 'error',
+    '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'error',
+    '@typescript-eslint/no-unused-vars': [
+    'error',
+    { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
+    ],
+    '@typescript-eslint/no-use-before-define': 'error',
+    '@typescript-eslint/no-useless-empty-export': 'error',
+    '@typescript-eslint/parameter-properties': ['error', { prefer: 'parameter-property' }],
+    '@typescript-eslint/prefer-enum-initializers': 'error',
+    'array-callback-return': ['error', { checkForEach: true }],
+    'block-scoped-var': 'error',
+    'class-methods-use-this': 'off',
+    'consistent-this': ['error', 'self'],
+    curly: ['error', 'multi', 'consistent'],
+    'default-case': 'error',
+    'default-param-last': 'off',
+    'dot-notation': 'error',
+    eqeqeq: 'error',
+    'func-style': ['error', 'declaration'],
+    'grouped-accessor-pairs': ['error', 'getBeforeSet'],
+    'guard-for-in': 'error',
+    'init-declarations': 'off',
+    'logical-assignment-operators': 'error',
+    'new-cap': 'error',
+    'no-alert': 'warn',
+    'no-array-constructor': 'error',
+    'no-caller': 'error',
+    'no-console': 'warn',
+    'no-constructor-return': 'error',
+    'no-div-regex': 'error',
+    'no-duplicate-imports': 'error',
+    'no-else-return': 'error',
+    'no-empty-function': 'error',
+    'no-empty-static-block': 'error',
+    'no-eq-null': 'error',
+    'no-eval': 'error',
+    'no-extra-bind': 'error',
+    'no-extra-label': 'error',
+    'no-extend-native': 'error',
+    'no-implicit-coercion': 'error',
+    'no-implicit-globals': 'error',
+    'no-implied-eval': 'error',
+    'no-invalid-this': 'off',
+    'no-iterator': 'error',
+    'no-label-var': 'error',
+    'no-lone-blocks': 'error',
+    'no-lonely-if': 'error',
+    'no-loop-func': 'off',
+    'no-multi-assign': 'error',
+    'no-negated-condition': 'error',
+    'no-nested-ternary': 'warn',
+    'no-new': 'error',
+    'no-new-func': 'error',
+    'no-new-wrappers': 'error',
+    'no-octal-escape': 'error',
+    'no-param-reassign': 'error',
+    'no-promise-executor-return': 'error',
+    'no-proto': 'error',
+    'no-return-assign': 'error',
+    'no-script-url': 'error',
+    'no-sequences': 'error',
+    'no-throw-literal': 'error',
+    'no-undef-init': 'error',
+    'no-undefined': 'error',
+    'no-underscore-dangle': 'error',
+    'no-unmodified-loop-condition': 'error',
+    'no-unneeded-ternary': 'error',
+    'no-unused-expressions': 'error',
+    'no-useless-assignment': 'error',
+    'no-useless-call': 'error',
+    'no-useless-computed-key': 'error',
+    'no-useless-concat': 'error',
+    'no-useless-constructor': 'error',
+    'no-useless-rename': 'error',
+    'no-useless-return': 'error',
+    'no-self-compare': 'error',
+    'no-template-curly-in-string': 'error',
+    'no-unreachable-loop': 'error',
+    'no-use-before-define': 'off',
+    'no-var': 'error',
+    'object-shorthand': ['error', 'always', { avoidExplicitReturnArrows: true }],
+    'one-var': ['error', 'never'],
+    'operator-assignment': 'error',
+    'prefer-arrow-callback': 'error',
+    'prefer-const': 'error',
+    'prefer-destructuring': 'error',
+    'prefer-exponentiation-operator': 'error',
+    'prefer-named-capture-group': 'error',
+    'prefer-numeric-literals': 'error',
+    'prefer-object-has-own': 'error',
+    'prefer-object-spread': 'error',
+    'prefer-promise-reject-errors': 'error',
+    'prefer-regex-literals': 'error',
+    'prefer-rest-params': 'error',
+    'prefer-spread': 'error',
+    'prefer-template': 'error',
+    radix: 'error',
+    'require-atomic-updates': 'error',
+    'require-await': 'error',
+    'require-unicode-regexp': 'error',
+    'symbol-description': 'error',
+    yoda: ['warn', 'never', { exceptRange: true }],
+}
+```
+
+```js
+// eslint-plugin-svelte
+rules: {
+    'svelte/no-at-html-tags': 'warn',
+},
+```
+
+#warning[
+    The `svelte/no-at-html-tags` rule is meant to guard against cross-site scripting vulnerabilities. As such, there MUST be an HTML sanitizer in the project before setting the rule to `warn`.
+]
