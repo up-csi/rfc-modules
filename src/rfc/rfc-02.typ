@@ -82,9 +82,7 @@ See #link(<es-rules>)[ESLint Rules] for the full list of RECOMMENDED rules to be
 ]
 
 == Custom Themes with TailwindCSS
-The official project theme/palette, as set by the designated UI/UX designer, MUST be stored in a `.css` file, hereby known as a _theme file_. If there are multiple themes, then there must be multiple theme files. The #link(<file-org>)[File Organization] section specifies where the theme files SHALL be located.
-
-Aside from following TailwindCSS syntax, the colors in the theme file MUST adhere to the format set by the Branding and Creatives Committee (i.e. HEX/RGB/HSL format).
+The official project theme/palette, as set by the designated UI/UX designer, MUST be stored as theme variables in a `.css` file. Aside from following TailwindCSS syntax, the color values assigned to the theme variables MUST adhere to the format set by the Branding and Creatives Committee (i.e. HEX/RGB/HSL format).
 
 === Applying a Theme
 To maintain a cleaner codebase, the use of the `dark:` directive, or any theme directive for that matter, SHOULD be *limited*. Colors that will _change_ with the theme (e.g. background and foreground colors) MUST be defined in the TailwindCSS configuration file (`tailwind.config.ts`) and SHALL refer to a CSS variable in a theme file.
