@@ -194,7 +194,7 @@ PostgreSQL is the RECOMMENDED option for a database due to familiarity, scalabil
 == Content Management System
 Some of the most popular content management systems (CMSs) today pack the content management with the content presentation. To avoid the pitfalls of such systems (e.g. lack of freedom and flexibility, slower performance with higher volumes of content, and security issues), it is highly RECOMMENDED to _decouple_ the frontend from the backend and use a _headless CMS_ instead.
 
-Further, due to its ease-of-use, PostgreSQL integration, and free self-hosting (provided the organization's *revenue is under 5 million US dollars*), [Directus](https://directus.io/) is highly RECOMMENDED to be used in projects where CMSs are needed.
+Further, due to its ease-of-use, PostgreSQL integration, and free self-hosting (provided the organization's *revenue is under 5 million US dollars*), #link("https://directus.io/")[Directus] is highly RECOMMENDED to be used in projects where CMSs are needed.
 
 = Appendix
 == ESLint Rules<es-rules>
