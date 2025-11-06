@@ -84,8 +84,24 @@ See #link(<es-rules>)[ESLint Rules] for the full list of RECOMMENDED rules to be
 == Custom Themes with TailwindCSS
 The official project theme/palette, as set by the designated UI/UX designer, MUST be stored as theme variables in a `.css` file. Aside from following TailwindCSS syntax, the color values assigned to the theme variables MUST adhere to the format set by the Branding and Creatives Committee (i.e. HEX/RGB/HSL format).
 
-=== Applying a Theme
-To maintain a cleaner codebase, the use of the `dark:` directive, or any theme directive for that matter, SHOULD be *limited*. Colors that will _change_ with the theme (e.g. background and foreground colors) MUST be defined in the TailwindCSS configuration file (`tailwind.config.ts`) and SHALL refer to a CSS variable in a theme file.
+=== Applying a Theme Variant
+To maintain a cleaner codebase, the use of any theme _variant_ directive (i.e., the `dark:` directive for the dark mode variant of a theme), SHOULD be *limited*. Tailwind defines CSS layers on import to `app.css`; thus, colors that will _change_ with the theme variant (e.g. background and foreground colors) MUST be defined in the `base` CSS layer in `app.css`, via `:root[data-theme='<theme>']`:
+
+```css
+@layer base {
+    :root {
+        /* default variant of a theme (e.g. light mode) */
+    }
+
+    :root[data-theme='dark'] {
+        /* dark mode */
+    }
+}
+```
+
+#note[
+    While the `tailwind.config.js` file is only still _officially_ supported due to backwards compatibility, it is actually _necessary_ to make this non-theme-variant-directive magic work. It is in `tailwind.config.js` that the utility class names can actually be set for the color variables that were not defined in `@theme`. 
+]
 
 = Development Proper
 == File Organization<file-org>
