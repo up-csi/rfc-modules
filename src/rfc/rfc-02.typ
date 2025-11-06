@@ -30,7 +30,7 @@ Alongside the standard `@sveltejs/kit` and `tailwindcss` Node.js packages and th
 
 Further, projects SHOULD include the following plugins
 - An official SvelteKit adapter (`@sveltejs/adapter-<static/node/vercel/cloudflare/netlify>`)
-- `@sveltejs/enhanced-img`: for optimization of local images. Note that this plugin does not work for dynamically-loaded images. See #link(<enhanced-img>)[`Enhanced Images`]
+- `@sveltejs/enhanced-img`: for optimization of local images. Note that this plugin does not work for dynamically-loaded images. See #link(<enhanced-img>)[`Enhanced Images`].
 
 === Dependencies vs devDependencies
 `devDependencies` are the packages needed during development while `dependencies` are the packages that the project depends on when _running_.
@@ -139,8 +139,8 @@ Import-sorting is quite helpful for seeing what's already imported and from whic
 - *JavaScript vs TypeScript*: If type inference is _enough_ or type construction and/or annotations are _not necessary_, JavaScript SHOULD be preferred over TypeScript.
 
     TypeScript is a superset of JavaScript and is usually just used for its ease-of-use when it comes to handling types. Moreover, #link("https://www.typescriptlang.org/play/?target=1&e=4#example/objects-and-arrays")[types are _stripped_ away when TypeScript code is transpiled to JavaScript]. Thus, it's overkill if plain JavaScript is put in a TypeScript file.
-- *Single- vs Double-quotes*: Single-quotes SHOULD be preferred for JavaScript and TypeScript files, while double-quotes SHOULD be preferred for HTML and JSON files.
-- *Naming Convention*: Based on the #link("https://google.github.io/styleguide/tsguide.html#naming")[Google TypeScript Style Guide] and #link("https://dev.to/somedood/a-grammar-based-naming-convention-13jf")[this Basticle], the following conventions SHALL be used \
+- *Single- vs Double-quotes*: Single-quotes SHOULD be preferred for JavaScript and TypeScript files, while double-quotes SHOULD be preferred for HTML files.
+- *Naming Convention*: Based on the #link("https://google.github.io/styleguide/tsguide.html#naming")[Google TypeScript Style Guide] and #link("https://dev.to/somedood/a-grammar-based-naming-convention-13jf")[this Basticle], the following conventions SHALL be used: \
     #table(
         columns: 4,
 
