@@ -44,7 +44,7 @@ Aside from the following automatically generated scripts:
 - `dev` $=>$ `vite dev`: starts the local development server
 - `build` $=>$ `vite build`: builds and optimizes the codebase into a `build` folder
 - `preview` $=>$ `vite preview`: enables local build preview
-- `prepare` $=>$ `svelte-kit sync`: creates the `.sveltekit` folder, `tsconfig.json`, and all generated types of the project
+- `prepare` $=>$ `svelte-kit sync || echo ''`: creates the `.sveltekit` folder, `tsconfig.json`, and all generated types of the project
 
 the following scripts MUST be included:
 - Formatting scripts
