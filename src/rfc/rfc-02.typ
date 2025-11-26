@@ -47,9 +47,9 @@ Aside from the following automatically generated scripts:
 - `prepare` $=>$ `svelte-kit sync || echo ''`: creates the `.sveltekit` folder, `tsconfig.json`, and all generated types of the project
 
 the following scripts MUST be included:
-- Formatting scripts
-    - `fmt` $=>$ `prettier --experimental-cli --check .`: checks for formatting issues in the codebase
-    - `fmt:fix` $=>$ `prettier --experimental-cli --write .`: applies Prettier's suggestions
+- Formatting scripts (note the '`.`'s at the end)
+    - `fmt` $=>$ `prettier --experimental-cli --check .`: checks for formatting issues in the current working directory
+    - `fmt:fix` $=>$ `prettier --experimental-cli --write .`: applies Prettier's suggestions in the current working directory
 - `lint` $=>$ `pnpm --parallel /^lint:/`: lints the codebase.
     - `lint:es` $=>$ `eslint --cache .`
         - `es:fix` $=>$ `eslint --cache --fix .`
