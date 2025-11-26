@@ -15,7 +15,7 @@ The standards outlined in this document are to be adopted for use by the Enginee
 = Repository Configuration
 Due to its ease-of-use, SvelteKit, with TailwindCSS for styling, SHOULD be used for web development until a faster and more intuitive framework has _matured_.
 
-Due to package maturity and stability, projects SHOULD use the Node.js runtime environment until #link(<need-pkg>)[necessary packages] in a more performant runtime environment have _matured_. Further, until a more performant package manager has _matured_ (i.e. v.1), `pnpm` SHOULD be used.
+Due to package maturity and stability, projects SHOULD use the Node.js runtime environment until #link(<need-pkg>)[necessary packages] in a more performant runtime environment have _matured_. Further, until a more performant package manager has _matured_ (i.e., v.1), `pnpm` SHOULD be used.
 
 #note[
     This RFC is subject to change if better technologies mature and/or missing technologies and/or standards are added.
@@ -35,7 +35,7 @@ Further, projects SHOULD include the following plugins
 === Dependencies vs devDependencies
 `devDependencies` are the packages needed during development while `dependencies` are the packages that the project depends on when _running_.
 
-Thus, if a package is needed during _runtime_ (i.e. imported in the frontend and/or backend), the package is a `dependency`. Else, this most probably means that the package isn't needed at runtime, but is needed during development (e.g. writing tests, formatting and linting code); as such, the package is a `devDependency`.
+Thus, if a package is needed during _runtime_ (i.e., imported and executed in the front-end and/or back-end in the final production bundle), the package is a `dependency`. Otherwise, the package is a `devDependency` that is only needed during development (e.g., running tests, formatting code, and linting code).
 
 For more information, please see #link("https://github.com/up-csi/up-csi.github.io/pull/97#discussion_r1811336963")[this comment] on the CSI website.
 
@@ -55,16 +55,14 @@ the following scripts MUST be included:
         - `es:fix` $=>$ `eslint --cache --fix .`
     - `lint:sv` $=>$ `svelte-check --tsconfig ./tsconfig.json`
 
-If default scripts differ from these, said defaults MUST be changed to match the scripts above.
-
-These scripts are executed by adding `pnpm` or `pnpm run` before them (e.g. `pnpm prepare`, `pnpm run dev`).
+These scripts are executed by adding `pnpm` or `pnpm run` before them (e.g., `pnpm prepare`, `pnpm run dev`).
 
 #note[
     Some interesting things regarding `pnpm prepare` and `svelte-kit sync`:
     - `pnpm prepare` is run after `pnpm install` as a #link("https://docs.npmjs.com/cli/v10/using-npm/scripts#life-cycle-operation-order")[lifecycle script]
     - `svelte-kit sync` #link("https://svelte.dev/docs/kit/cli#svelte-kit-sync")[generates _inferred_ types] for variables and puts it in the `.svelte-kit` folder.
 
-    Thus, `svelte-kit sync` MUST be run *in the same environment* as `.env` variables before using them (e.g. importing, linting) as generated types MUST be set-up before use. As such, on GitHub workflows, `.env` variable declaration may be seen in the installation step.
+    Thus, `svelte-kit sync` MUST be run *in the same environment* as `env` variables before using them (e.g., importing, linting) as generated types MUST be set-up before use. As such, on GitHub workflows, `env` variable declaration is seen in the installation step.
 ]
 
 = Dependency-Related Configurations
@@ -84,15 +82,15 @@ See #link(<es-rules>)[ESLint Rules] for the full list of RECOMMENDED rules to be
 ]
 
 == Custom Themes with TailwindCSS
-The official project theme/palette, as set by the designated UI/UX designer, MUST be stored as theme variables in a `.css` file. Aside from following TailwindCSS syntax, the color values assigned to the theme variables MUST adhere to the format set by the Branding and Creatives Committee (i.e. HEX/RGB/HSL format).
+The official project theme/palette, as set by the designated UI/UX designer, MUST be stored as theme variables in a `.css` file. Aside from following TailwindCSS syntax, the color values assigned to the theme variables MUST adhere to the format set by the Branding and Creatives Committee (i.e., HEX/RGB/HSL format).
 
 === Applying a Theme Variant
-To maintain a cleaner codebase, the use of any theme _variant_ directive (i.e., the `dark:` directive for the dark mode variant of a theme), SHOULD be *limited*. Tailwind defines CSS layers on import to `app.css`; thus, colors that will _change_ with the theme variant (e.g. background and foreground colors) MUST be defined in the `base` CSS layer in `app.css`, via `:root[data-theme='<theme>']`:
+To maintain a cleaner codebase, the use of any theme _variant_ directive (i.e., the `dark:` directive for the dark mode variant of a theme), SHOULD be *limited*. Tailwind defines CSS layers on import to `app.css`. By convention, colors that will _change_ with the theme variant (e.g., background and foreground colors) SHOULD be defined in the `base` CSS layer in `app.css`, via `:root[data-theme='<theme-variant>']`:
 
 ```css
 @layer base {
     :root {
-        /* default variant of a theme (e.g. light mode) */
+        /* default variant of a theme (e.g., light mode) */
     }
 
     :root[data-theme='dark'] {
@@ -102,13 +100,13 @@ To maintain a cleaner codebase, the use of any theme _variant_ directive (i.e., 
 ```
 
 #note[
-    While the `tailwind.config.js` file is only still _officially_ supported due to backwards compatibility, it is actually _necessary_ to make this non-theme-variant-directive magic work. It is in `tailwind.config.js` that the utility class names can actually be set for the color variables that were not defined in `@theme`. 
+    While the `tailwind.config.js` file is only still _officially_ supported due to backwards compatibility, it is actually _necessary_ to make this non-theme-variant-directive magic work. It is in `tailwind.config.js` that the utility class names can be set for the color variables that were not defined in `@theme`. 
 ]
 
 = Development Proper
 == File Organization<file-org>
 All files inside the `src/routes` folder MUST only be
-+ `+` files (e.g. `+page.svelte`), and
++ `+` files (e.g., `+page.svelte`), and
 + *page-specific UI* components, stored in a `(ui)` folder in the parent route folder.
 
 Everything else in the `src` folder that can be put in a sub folder of `src` and MUST NOT be in the `src/routes` folder SHALL be put in the `src/lib` folder (aliased as `$lib`). See #link(<lib-folder>)[The `$lib` Folder] for a recommended file organization for `$lib`.
@@ -123,7 +121,7 @@ Import-sorting is quite helpful for seeing what's already imported and from whic
 ]
 
 == Enhanced Images<enhanced-img>
-*For local images*, the `<enhanced:img />` tag SHOULD be preferred over the `<img />` tag. As such,
+*For local images*, the `<enhanced:img />` tag SHOULD be preferred over the `<img />` tag. Moreover,
 - images SHOULD be in the `.webp` format.
 - the `EnhancedImgAttributes` type SHOULD be imported from `@sveltejs/enhanced-img` for type validation
     ```html
@@ -184,17 +182,15 @@ MUST be run and any issues MUST be corrected prior to making a pull request to t
 
 = Content Management
 == Type Validation
-For projects that deal with local JSON or dynamically loaded content, it is a MUST to type validate incoming JSON to prevent type errors and other undefined and unexpected behavior. Thus, schemas and types for these JSON MUST be declared and these JSON MUST be parsed through the appropriate schema to validate the JSON.
+For projects that deal with local JSON or dynamically loaded content, the incoming JSON data MUST be validated at runtime to prevent type errors and other undefined and unexpected behavior. Thus, schemas and types for these JSON MUST be declared and these JSON values MUST be defined and MUST be parsed via the appropriate schemas for validation.
 
-Moreover, #link("https://www.typescriptlang.org/play/?target=1&e=4#example/objects-and-arrays")[types are _stripped_ away when TypeScript code is transpiled to JavaScript]. Thus, TypeScript doesn't _exist_ at runtime.
-
-Thus, it is a MUST to use a schema-declaration and validation library which ensures type checks at _runtime_. The RECOMMENDED library for this is `valibot`.
+The rationale behind this guideline is because #link("https://www.typescriptlang.org/play/?target=1&e=4#example/objects-and-arrays")[types are _stripped_ away when TypeScript code is transpiled to JavaScript]. TypeScript doesn't actually _exist_ at runtime. Thus, it is a MUST to use a schema-declaration and validation library which ensures type checks at _runtime_. The RECOMMENDED library for this is #link("https://valibot.dev/")[`valibot`].
 
 == Database
 #link("https://www.postgresql.org/")[PostgreSQL] is the RECOMMENDED option for a database due to familiarity, scalability, and extensibility.
 
 == Content Management System
-Some of the most popular content management systems (CMSs) today pack the content management with the content presentation. To avoid the pitfalls of such systems (e.g. lack of freedom and flexibility, slower performance with higher volumes of content, and security issues), it is highly RECOMMENDED to _decouple_ the frontend from the backend and use a _headless CMS_ instead.
+Some of the most popular content management systems (CMSs) today pack the content management with the content presentation. To avoid the pitfalls of such systems (e.g., lack of freedom and flexibility, slower performance with higher volumes of content, and security issues), it is highly RECOMMENDED to _decouple_ the front-end from the back-end and use a _headless CMS_ instead.
 
 Further, due to its ease-of-use, PostgreSQL integration, and free self-hosting (provided the organization's *revenue is under 5 million US dollars*), #link("https://directus.io/")[Directus] is highly RECOMMENDED to be used in projects where CMSs are needed.
 
@@ -371,7 +367,7 @@ rules: {
 
 == The `$lib` Folder<lib-folder>
 A RECOMMENDED file organization for the `$lib` folder, based on feature-sliced design (#link("https://dev.to/somedood/youre-slicing-your-architecture-wrong-4ob9")[this Basticle sums it up quite nicely]), is as follows:
-+ `brand`: for all branding-related files (e.g. the theme files). An exception is the favicon file, which stays in the `static` folder.
-+ `ui`: for all UI components that aren't tailor-made for the current application and can be reused across projects (e.g. those from component libraries like `shadcn-svelte`).
-+ `feature`: for all features (i.e. UI components, functions) that are tailor-made for the current application that are _not_ page-specific UI components. All features must be bundled in their own subfolders.
++ `brand`: for all branding-related files (e.g., the theme files). An exception is the favicon file, which stays in the `static` folder.
++ `ui`: for all UI components that aren't tailor-made for the current application and can be reused across projects (i.e., those from component libraries like `shadcn-svelte`).
++ `feature`: for all features (i.e., UI components, functions) that are tailor-made for the current application that are _not_ page-specific UI components. All features must be bundled in their own subfolders.
 + `assets`: for all images shared by multiple UI components that don't belong anywhere else.
