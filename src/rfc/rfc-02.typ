@@ -239,6 +239,10 @@ rules: {
 }
 ```
 
+#warning[
+    Turning off the `css/no-invalid-at-rules` is a *temporary* measure due to `@eslint/css` failing on bespoke Tailwind at-rules (e.g., `@plugin`, `@theme`).
+]
+
 ```js
 // @eslint/js, typescript-eslint
 rules: {
