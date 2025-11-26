@@ -279,7 +279,6 @@ rules: {
     'no-alert': 'warn',
     'no-array-constructor': 'error',
     'no-caller': 'error',
-    'no-console': 'warn',
     'no-constructor-return': 'error',
     'no-div-regex': 'error',
     'no-duplicate-imports': 'error',
