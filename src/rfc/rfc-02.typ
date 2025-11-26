@@ -50,7 +50,7 @@ The following scripts MUST be included:
     - `fmt:fix` $=>$ `prettier --experimental-cli --write .`: applies Prettier's suggestions
 - `lint` $=>$ `pnpm --parallel /^lint:/`: lints the codebase.
     - `lint:es` $=>$ `eslint --cache .`
-    - `lint:es:fix` $=>$ `eslint --fix .`
+        - `es:fix` $=>$ `eslint --cache --fix .`
     - `lint:sv` $=>$ `svelte-check --tsconfig ./tsconfig.json`
 
 If default scripts differ from these, said defaults MUST be changed to match the scripts above.
