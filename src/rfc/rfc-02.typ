@@ -156,7 +156,7 @@ Import-sorting is quite helpful for seeing what's already imported and from whic
         [Constants], [UPPER_SNAKE_CASE], [whatever they're supposed to be called], [mathematical constants like `PI`],
         [Everything Else], [camelCase], [singular noun], [`count`, `color`, `memName`],
     )
-    In addition, please name _appropriately_.
+    In addition, please name _appropriately_. For clarity and readability, *clear and verbose* is strongly RECOMMENDED over *clever and terse*. For instance: prefer `response` over `res` (which is ambiguous to `result`), `error` over `err`, `event` over `e` or `evt`, `userData` over `data`, etc.
 
 It is RECOMMENDED to refer to the #link("https://google.github.io/styleguide/tsguide.html")[Google TypeScript Style Guide] if there are style considerations not covered in this RFC.
 
