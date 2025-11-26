@@ -40,11 +40,13 @@ Thus, if a package is needed during _runtime_ (i.e. imported in the frontend and
 For more information, please see #link("https://github.com/up-csi/up-csi.github.io/pull/97#discussion_r1811336963")[this comment] on the CSI website.
 
 == Scripts<scripts>
-The following scripts MUST be included:
+Aside from the following automatically generated scripts:
 - `dev` $=>$ `vite dev`: starts the local development server
 - `build` $=>$ `vite build`: builds and optimizes the codebase into a `build` folder
 - `preview` $=>$ `vite preview`: enables local build preview
 - `prepare` $=>$ `svelte-kit sync`: creates the `.sveltekit` folder, `tsconfig.json`, and all generated types of the project
+
+the following scripts MUST be included:
 - Formatting scripts
     - `fmt` $=>$ `prettier --experimental-cli --check .`: checks for formatting issues in the codebase
     - `fmt:fix` $=>$ `prettier --experimental-cli --write .`: applies Prettier's suggestions
