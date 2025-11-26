@@ -22,15 +22,15 @@ Due to package maturity and stability, projects SHOULD use the Node.js runtime e
 ]
 
 == Necessary Packages<need-pkg>
-Alongside the standard `@sveltejs/kit` and `tailwindcss` Node.js packages and their dependencies, projects MUST include the following packages (specific packages subject to change)
-- JSON validation for type-safety (`valibot`)
-- codebase formatter (`prettier`)
-- codebase linters (`svelte-check`, `eslint`)
-- HTML sanitizer (`sanitize-html`), if using the `@html` keyword
+Alongside the standard #link("https://svelte.dev/docs/kit/@sveltejs-kit")[`@sveltejs/kit`] and #link("https://tailwindcss.com/")[`tailwindcss`] Node.js packages and their dependencies, projects MUST include the following packages (specific packages subject to change)
+- JSON validation for type-safety (#link("https://valibot.dev/")[`valibot`]), if using external data
+- codebase formatter (#link("https://prettier.io/")[`prettier`])
+- codebase linters (#link("https://svelte.dev/docs/cli/sv-check")[`svelte-check`], #link("https://eslint.org/")[`eslint`])
+- HTML sanitizer (#link("https://www.npmjs.com/package/sanitize-html")[`sanitize-html`]), if using the `@html` keyword
 
 Further, projects SHOULD include the following plugins
-- An official SvelteKit adapter (`@sveltejs/adapter-<static/node/vercel/cloudflare/netlify>`)
-- `@sveltejs/enhanced-img`: for optimization of local images. Note that this plugin does not work for dynamically-loaded images. See #link(<enhanced-img>)[`Enhanced Images`].
+- An official SvelteKit adapter (#link("https://svelte.dev/docs/kit/adapters")[`@sveltejs/adapter-<static/node/vercel/cloudflare/netlify>`])
+- #link("https://svelte.dev/docs/kit/images#sveltejs-enhanced-img")[`@sveltejs/enhanced-img`]: for optimization of local images. Note that this plugin does not work for dynamically-loaded images. See #link(<enhanced-img>)[`Enhanced Images`].
 
 === Dependencies vs devDependencies
 `devDependencies` are the packages needed during development while `dependencies` are the packages that the project depends on when _running_.
@@ -112,12 +112,12 @@ All files inside the `src/routes` folder MUST only be
 Everything else in the `src` folder that can be put in a sub folder of `src` and MUST NOT be in the `src/routes` folder SHALL be put in the `src/lib` folder (aliased as `$lib`). See #link(<lib-folder>)[The `$lib` Folder] for a recommended file organization for `$lib`.
 
 == Import-sorting Madness
-Import-sorting is quite helpful for seeing what's already imported and from which packages. However, since time immemorial (start of the CSI website development), the `sort-imports` ESLint rule has been Public Enemy \#1 for new contributors due to its complexity. Errors from this rule usually result in hours of debugging and wacky solutions. Thus, it is RECOMMENDED to use `@bastidood/eslint-plugin-imsort` for automatically sorting imports (via #link(<scripts>)[`eslint --fix`]).
+Import-sorting is quite helpful for seeing what's already imported and from which packages. However, since time immemorial (start of the CSI website development), the `sort-imports` ESLint rule has been Public Enemy \#1 for new contributors due to its complexity. Errors from this rule usually result in hours of debugging and wacky solutions. Thus, it is RECOMMENDED to use #link("https://www.npmjs.com/package/@bastidood/eslint-plugin-imsort")[`@bastidood/eslint-plugin-imsort`] for automatically sorting imports (via #link(<scripts>)[`eslint --fix`]).
 
 #warning[
     As per the `README`,
     - this plugin conflicts with the ESLint `sort-imports` rule. As such, `sort-imports` MUST be turned off when using this.
-    - #link(<scripts>)[`eslint --fix`] MUST be run before Prettier to sort imports before formatting code.
+    - #link(<scripts>)[`eslint --fix`] MUST be run before Prettier to sort imports before formatting code as per #link("https://www.npmjs.com/package/@bastidood/eslint-plugin-imsort#integration-with-prettier")[the package instructions].
 ]
 
 == Enhanced Images<enhanced-img>
@@ -189,7 +189,7 @@ Moreover, #link("https://www.typescriptlang.org/play/?target=1&e=4#example/objec
 Thus, it is a MUST to use a schema-declaration and validation library which ensures type checks at _runtime_. The RECOMMENDED library for this is `valibot`.
 
 == Database
-PostgreSQL is the RECOMMENDED option for a database due to familiarity, scalability, and extensibility.
+#link("https://www.postgresql.org/")[PostgreSQL] is the RECOMMENDED option for a database due to familiarity, scalability, and extensibility.
 
 == Content Management System
 Some of the most popular content management systems (CMSs) today pack the content management with the content presentation. To avoid the pitfalls of such systems (e.g. lack of freedom and flexibility, slower performance with higher volumes of content, and security issues), it is highly RECOMMENDED to _decouple_ the frontend from the backend and use a _headless CMS_ instead.
