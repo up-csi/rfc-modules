@@ -170,10 +170,10 @@ pnpm fmt
 # then, if there are formatting issues,
 pnpm fmt:fix
 
-# the linters,
+# then the linters,
 pnpm lint
 
-# and the builders
+# then, if there are no errors, the builders
 pnpm build
 # then, to preview the built app
 pnpm preview
