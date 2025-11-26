@@ -151,7 +151,7 @@ Import-sorting is quite helpful for seeing what's already imported and from whic
         [Class Methods and Functions],
         [camelCase],
         ["transitive verb + direct object" in the imperative mood],
-        [`getTeam`, `setCommitteeColor`, `attackTitan`],
+        [`getTeam`, `setCommittee`, `attackTitan`],
 
         [Constants], [UPPER_SNAKE_CASE], [whatever they're supposed to be called], [mathematical constants like `PI`],
         [Everything Else], [camelCase], [singular noun], [`count`, `color`, `memName`],
