@@ -365,6 +365,10 @@ rules: {
     The `svelte/no-at-html-tags` rule is meant to guard against cross-site scripting vulnerabilities. As such, there MUST be an HTML sanitizer in the project before setting the rule to `warn`.
 ]
 
+#warning[
+    The amount of warnings MUST be kept at the minimum. If any fixes can be applied for code that emit warnings, then those fixes MUST be done before pushing to `main`.
+]
+
 == The `$lib` Folder<lib-folder>
 A RECOMMENDED file organization for the `$lib` folder, based on feature-sliced design (#link("https://dev.to/somedood/youre-slicing-your-architecture-wrong-4ob9")[this Basticle sums it up quite nicely]), is as follows:
 + `brand`: for all branding-related files (e.g., the theme files). An exception is the favicon file, which stays in the `static` folder.
