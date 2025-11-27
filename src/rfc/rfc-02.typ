@@ -180,6 +180,11 @@ pnpm preview
 ```
 MUST be run and any issues MUST be corrected prior to making a pull request to the remote repository.
 
+#warning[
+    The way our workflow is arranged makes it so that code with linting errors cannot be deployed but code with linting warnings can. Thus, the amount of warnings MUST be kept at a _minimum_. If any warnings can be fixed, then those MUST be fixed before pushing to `main`.
+]
+
+
 = Content Management
 == Type Validation
 For projects that deal with local JSON or dynamically loaded content, the incoming JSON data MUST be validated at runtime to prevent type errors and other undefined and unexpected behavior. Thus, schemas and types for these JSON MUST be declared and these JSON values MUST be defined and MUST be parsed via the appropriate schemas for validation.
@@ -363,10 +368,6 @@ rules: {
 
 #warning[
     The `svelte/no-at-html-tags` rule is meant to guard against cross-site scripting vulnerabilities. As such, there MUST be an HTML sanitizer in the project before setting the rule to `warn`.
-]
-
-#warning[
-    The amount of warnings MUST be kept at the minimum. If any fixes can be applied for code that emit warnings, then those fixes MUST be done before pushing to `main`.
 ]
 
 == The `$lib` Folder<lib-folder>
