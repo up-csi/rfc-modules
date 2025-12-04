@@ -51,8 +51,8 @@ the following scripts MUST be included:
     - `fmt` $=>$ `prettier --experimental-cli --check .`: checks for formatting issues in the current working directory
     - `fmt:fix` $=>$ `prettier --experimental-cli --write .`: applies Prettier's suggestions in the current working directory
 - `lint` $=>$ `pnpm --parallel /^lint:/`: lints the codebase.
-    - `lint:es` $=>$ `eslint --cache .`
-        - `es:fix` $=>$ `eslint --cache --fix .`
+    - `lint:es` $=>$ `eslint --cache --concurrency auto .`
+        - `es:fix` $=>$ `eslint --cache --fix --concurrency auto .`
     - `lint:sv` $=>$ `svelte-check --tsconfig ./tsconfig.json`
 
 These scripts are executed by adding `pnpm` or `pnpm run` before them (e.g., `pnpm prepare`, `pnpm run dev`).
