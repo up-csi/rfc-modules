@@ -3,7 +3,7 @@
 #show: project.with(
     "RFC-02: Web Development Tech Stack",
     authors: ("Eriene Galinato",),
-    status: draft-status,
+    status: adopted-status,
     abstract: "This document codifies and standardizes the tech stack to be adopted by CSI for web development, with the aim of standardizing ESLint rules, file organization, and content management, among others.",
 )
 
